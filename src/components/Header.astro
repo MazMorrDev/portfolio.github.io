@@ -1,0 +1,112 @@
+---
+import { BaseLayout } from '../layouts/BaseLayout.astro';
+---
+
+<header class="header">
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo">
+        <span class="logo-text">.NET</span>
+        <span class="logo-version">10</span>
+      </div>
+      
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link">Inicio</a></li>
+        <li><a href="/about" class="nav-link">Sobre mí</a></li>
+        <li><a href="/projects" class="nav-link">Proyectos</a></li>
+        <li><a href="/skills" class="nav-link">Habilidades</a></li>
+        <li><a href="/contact" class="nav-link">Contacto</a></li>
+      </ul>
+      
+      <div class="mobile-menu">
+        <i class="ri-menu-line"></i>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    background-color: white;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  
+  .logo-text {
+    color: var(--primary);
+  }
+  
+  .logo-version {
+    background: var(--primary);
+    color: white;
+    padding: 0.1rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-left: 0.3rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+  }
+  
+  .nav-link:hover {
+    color: var(--primary);
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .mobile-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+    
+    .mobile-menu {
+      display: block;
+    }
+  }
+</style>
