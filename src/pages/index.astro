@@ -1,11 +1,342 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const technologies = [
+  { name: '.NET 10', icon: 'ri-code-s-slash-line' },
+  { name: 'C# 12', icon: 'ri-braces-line' },
+  { name: 'ASP.NET Core', icon: 'ri-server-line' },
+  { name: 'Entity Framework', icon: 'ri-database-2-line' },
+  { name: 'SQL Server', icon: 'ri-database-line' },
+  { name: 'Azure', icon: 'ri-cloud-line' },
+  { name: 'Docker', icon: 'ri-docker-line' },
+  { name: 'Git', icon: 'ri-git-branch-line' }
+];
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="Backend Developer .NET | Portfolio">
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              Desarrollador Backend
+              <span class="highlight">.NET 10</span>
+            </h1>
+            <p class="hero-description">
+              Especializado en crear APIs robustas, arquitecturas escalables 
+              y soluciones backend eficientes con las últimas tecnologías de Microsoft.
+            </p>
+            <div class="hero-buttons">
+              <a href="/projects" class="btn btn-primary">
+                <i class="ri-eye-line"></i> Ver Proyectos
+              </a>
+              <a href="/contact" class="btn btn-outline">
+                <i class="ri-mail-line"></i> Contactar
+              </a>
+            </div>
+          </div>
+          <div class="hero-code">
+            <pre><code class="language-csharp">
+// Ejemplo de API .NET 10
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllers();
+builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<AppDbContext>();
+
+var app = builder.Build();
+
+app.UseHttpsRedirection();
+app.MapControllers();
+app.Run();
+            </code></pre>
+          </div>
+        </div>
+        
+        <!-- Tech Stack -->
+        <div class="tech-stack">
+          <h3 class="section-subtitle">Tecnologías Principales</h3>
+          <div class="tech-grid">
+            {technologies.map(tech => (
+              <div class="tech-item">
+                <i class={tech.icon}></i>
+                <span>{tech.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Featured Projects -->
+    <section class="projects-preview">
+      <div class="container">
+        <h2 class="section-title">Proyectos Destacados</h2>
+        <div class="projects-grid">
+          <!-- Proyecto 1 -->
+          <div class="project-card">
+            <div class="project-icon">
+              <i class="ri-shopping-cart-2-line"></i>
+            </div>
+            <h3>E-commerce API</h3>
+            <p>API REST para plataforma de e-commerce con microservicios y Azure.</p>
+            <div class="project-tech">
+              <span>.NET 10</span>
+              <span>Redis</span>
+              <span>Kafka</span>
+            </div>
+          </div>
+          
+          <!-- Proyecto 2 -->
+          <div class="project-card">
+            <div class="project-icon">
+              <i class="ri-bank-line"></i>
+            </div>
+            <h3>Sistema Bancario</h3>
+            <p>Backend para transacciones bancarias con seguridad y auditoría.</p>
+            <div class="project-tech">
+              <span>C# 12</span>
+              <span>SQL Server</span>
+              <span>JWT</span>
+            </div>
+          </div>
+          
+          <!-- Proyecto 3 -->
+          <div class="project-card">
+            <div class="project-icon">
+              <i class="ri-health-book-line"></i>
+            </div>
+            <h3>HealthCare API</h3>
+            <p>Sistema de gestión médica con HL7 FHIR y telemedicina.</p>
+            <div class="project-tech">
+              <span>ASP.NET</span>
+              <span>Docker</span>
+              <span>MongoDB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  }
+  
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  
+  .highlight {
+    color: var(--primary);
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .hero-description {
+    font-size: 1.2rem;
+    color: var(--gray);
+    margin-bottom: 2rem;
+    max-width: 600px;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s;
+  }
+  
+  .btn-primary {
+    background: var(--primary);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+  
+  .btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+  }
+  
+  .btn-outline:hover {
+    background: var(--primary);
+    color: white;
+  }
+  
+  .hero-code {
+    background: var(--code-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  
+  .hero-code pre {
+    margin: 0;
+    overflow-x: auto;
+  }
+  
+  .hero-code code {
+    color: #d4d4d4;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+  }
+  
+  /* Tech Stack */
+  .tech-stack {
+    margin-top: 4rem;
+  }
+  
+  .section-subtitle {
+    text-align: center;
+    color: var(--gray);
+    margin-bottom: 2rem;
+  }
+  
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .tech-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+  }
+  
+  .tech-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .tech-item i {
+    color: var(--primary);
+    font-size: 1.2rem;
+  }
+  
+  /* Projects Preview */
+  .projects-preview {
+    padding: 5rem 0;
+    background: white;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .project-card {
+    background: var(--light);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+    box-shadow: var(--shadow);
+  }
+  
+  .project-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+  }
+  
+  .project-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+  
+  .project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .project-tech {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .project-tech span {
+    background: rgba(81, 43, 212, 0.1);
+    color: var(--primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 992px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .hero-buttons {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+    
+    .tech-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
