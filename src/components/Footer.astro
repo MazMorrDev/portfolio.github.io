@@ -1,0 +1,164 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-text">.NET</span>
+          <span class="logo-version">10</span>
+        </div>
+        <p class="footer-tagline">
+          Desarrollando soluciones backend escalables y eficientes
+        </p>
+      </div>
+      
+      <div class="footer-links">
+        <div class="link-group">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/about">Sobre mí</a></li>
+            <li><a href="/projects">Proyectos</a></li>
+            <li><a href="/skills">Habilidades</a></li>
+          </ul>
+        </div>
+        
+        <div class="link-group">
+          <h4>Tecnologías</h4>
+          <ul>
+            <li>.NET 10</li>
+            <li>C# 12</li>
+            <li>ASP.NET Core</li>
+            <li>Entity Framework</li>
+          </ul>
+        </div>
+        
+        <div class="link-group">
+          <h4>Contacto</h4>
+          <div class="social-links">
+            <a href="#" class="social-link">
+              <i class="ri-github-fill"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="ri-linkedin-box-fill"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="ri-twitter-x-fill"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="ri-mail-fill"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} Backend Developer Portfolio. Todos los derechos reservados.</p>
+      <p>Construido con Astro y .NET ❤️</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--dark);
+    color: white;
+    padding: 3rem 0 1.5rem;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-brand .logo {
+    margin-bottom: 1rem;
+  }
+  
+  .footer-tagline {
+    color: #aaa;
+    line-height: 1.6;
+  }
+  
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .link-group h4 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .link-group ul {
+    list-style: none;
+  }
+  
+  .link-group li {
+    margin-bottom: 0.5rem;
+    color: #aaa;
+  }
+  
+  .link-group a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .link-group a:hover {
+    color: white;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+  }
+  
+  .social-link:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    text-align: center;
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+  
+  .footer-bottom p {
+    margin-bottom: 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
+    
+    .footer-links {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

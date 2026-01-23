@@ -27,43 +27,8 @@ const { title = "Portfolio Backend .NET Developer" } = Astro.props;
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
   
-  <!-- Styles -->
+  <!-- Global CSS -->
   <link rel="stylesheet" href="/styles/global.css" />
-  
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    :root {
-      --primary: #512bd4;
-      --primary-dark: #3719a8;
-      --secondary: #0d6efd;
-      --dark: #1a1a2e;
-      --light: #f8f9fa;
-      --gray: #6c757d;
-      --success: #198754;
-      --code-bg: #1e1e1e;
-      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: var(--light);
-      min-height: 100vh;
-    }
-    
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-  </style>
 </head>
 <body>
   <slot />

@@ -1,7 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Layout from '../layouts/Layout.astro';
 
 const technologies = [
   { name: '.NET 10', icon: 'ri-code-s-slash-line' },
@@ -15,7 +15,7 @@ const technologies = [
 ];
 ---
 
-<BaseLayout title="Backend Developer .NET | Portfolio">
+<Layout title="Backend Developer .NET | Portfolio">
   <Header />
   
   <main>
@@ -48,7 +48,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<AppDbContext>();
 
 var app = builder.Build();
 
@@ -126,7 +125,7 @@ app.Run();
   </main>
   
   <Footer />
-</BaseLayout>
+</Layout>
 
 <style>
   /* Hero Section */
