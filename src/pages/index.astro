@@ -1,341 +1,934 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Layout from '../layouts/Layout.astro';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
 
-const technologies = [
-  { name: '.NET 10', icon: 'ri-code-s-slash-line' },
-  { name: 'C# 12', icon: 'ri-braces-line' },
-  { name: 'ASP.NET Core', icon: 'ri-server-line' },
-  { name: 'Entity Framework', icon: 'ri-database-2-line' },
-  { name: 'SQL Server', icon: 'ri-database-line' },
-  { name: 'Azure', icon: 'ri-cloud-line' },
-  { name: 'Docker', icon: 'ri-docker-line' },
-  { name: 'Git', icon: 'ri-git-branch-line' }
+// Tecnologías backend especializadas
+const backendTech = [
+  {
+    name: ".NET 10 / .NET 8",
+    level: 95,
+    icon: "ri-windows-fill",
+    category: "Framework",
+  },
+  { name: "C# 14", level: 90, icon: "ri-braces-line", category: "Lenguaje" },
+  {
+    name: "ASP.NET Core",
+    level: 88,
+    icon: "ri-server-line",
+    category: "Framework",
+  },
+  {
+    name: "Entity Framework",
+    level: 85,
+    icon: "ri-database-2-line",
+    category: "ORM",
+  },
+  {
+    name: "SQL Server",
+    level: 82,
+    icon: "ri-database-line",
+    category: "Base de Datos",
+  },
+  {
+    name: "REST APIs",
+    level: 90,
+    icon: "ri-api-line",
+    category: "Arquitectura",
+  },
+  {
+    name: "Microservicios",
+    level: 80,
+    icon: "ri-node-tree",
+    category: "Arquitectura",
+  },
+  { name: "Azure", level: 75, icon: "ri-cloud-line", category: "Cloud" },
 ];
+
+// Proyectos destacados
+const featuredProjects = [
+  {
+    title: "Business Manager",
+    description: "Sistema de inventario y ventas con arquitectura completa",
+    tech: ["Spring Boot", "JavaFX", "H2 Database"],
+    features: ["CRUD Completo", "UI Responsive", "Persistencia de Datos"],
+    githubUrl: "#",
+    type: "Backend",
+  },
+  {
+    title: "Interactive Quiz",
+    description: "Aplicación educativa con puntuación en tiempo real",
+    tech: ["JavaFX", "Spring Boot", "WebSockets"],
+    features: [
+      "Preguntas Dinámicas",
+      "Gestión de Quizzes",
+      "Seguimiento de Puntajes",
+    ],
+    githubUrl: "#",
+    type: "Fullstack",
+  },
+];
+
+// Experiencia
+const experience = [
+  {
+    role: "Desarrollador Backend .NET",
+    period: "2023 - Presente",
+    description: "Desarrollo de APIs REST y microservicios con .NET 8/10",
+    highlights: [
+      "Arquitecturas escalables",
+      "Entity Framework Core",
+      "SQL Server",
+    ],
+  },
+  {
+    role: "Teaching Assistant",
+    period: "2022 - 2023",
+    description: "Asistente en cursos de programación y bases de datos",
+    highlights: [
+      "Mentoría a estudiantes",
+      "Resolución de problemas",
+      "Fundamentos de .NET",
+    ],
+  },
+];
+
+const csharpCode = `
+// Arquitectura moderna con .NET 10
+var builder = WebApplication.CreateBuilder(args);
+
+// Configuración de servicios
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<AppDbContext>();
+builder.Services.AddScoped<IProductService, ProductService>();
+
+// Configuración de CORS
+builder.Services.AddCors(options => 
+{
+    options.AddPolicy("AllowAngularApp",
+        policy => policy.WithOrigins("https://localhost:4200")
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
+});
+
+var app = builder.Build();
+
+// Pipeline de middleware
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+app.UseCors("AllowAngularApp");
+app.UseAuthorization();
+app.MapControllers();
+
+// Endpoints mínimos
+app.MapGet("/api/health", () => Results.Ok(new { Status = "Healthy" }));
+app.MapGet("/api/products", async (IProductService service) 
+    => await service.GetAllProductsAsync());
+
+await app.RunAsync();
+`;
 ---
 
 <Layout title="Backend Developer .NET | Portfolio">
   <Header />
-  
+
   <main>
     <!-- Hero Section -->
     <section class="hero">
       <div class="container">
         <div class="hero-content">
           <div class="hero-text">
+            <div class="hero-badge">
+              <span class="badge">👨‍💻 Backend Specialist</span>
+              <span class="badge">🇨🇺 Cuba</span>
+            </div>
             <h1 class="hero-title">
-              Desarrollador Backend
-              <span class="highlight">.NET 10</span>
+              Ingeniero en Computación &
+              <span class="highlight">Desarrollador .NET</span>
             </h1>
             <p class="hero-description">
-              Especializado en crear APIs robustas, arquitecturas escalables 
-              y soluciones backend eficientes con las últimas tecnologías de Microsoft.
+              Especializado en construir APIs robustas y arquitecturas
+              escalables con .NET 10, C# 12 y tecnologías Microsoft. Combinando
+              fundamentos sólidos de ingeniería con experiencia práctica en
+              desarrollo backend.
             </p>
+            <div class="hero-stats">
+              <div class="stat">
+                <span class="stat-number">3+</span>
+                <span class="stat-label">Años de Experiencia</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Proyectos Completados</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">5</span>
+                <span class="stat-label">Tecnologías Principales</span>
+              </div>
+            </div>
             <div class="hero-buttons">
-              <a href="/projects" class="btn btn-primary">
-                <i class="ri-eye-line"></i> Ver Proyectos
+              <a href="#projects" class="btn btn-primary">
+                <i class="ri-github-fill"></i> Ver Proyectos
               </a>
-              <a href="/contact" class="btn btn-outline">
+              <a href="#contact" class="btn btn-outline">
                 <i class="ri-mail-line"></i> Contactar
+              </a>
+              <a
+                href="/Marlon_Rodriguez_CV.pdf"
+                class="btn btn-secondary"
+                download
+              >
+                <i class="ri-download-line"></i> Descargar CV
               </a>
             </div>
           </div>
           <div class="hero-code">
-            <pre><code class="language-csharp">
-// Ejemplo de API .NET 10
-var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddControllers();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
-
-app.UseHttpsRedirection();
-app.MapControllers();
-app.Run();
-            </code></pre>
-          </div>
-        </div>
-        
-        <!-- Tech Stack -->
-        <div class="tech-stack">
-          <h3 class="section-subtitle">Tecnologías Principales</h3>
-          <div class="tech-grid">
-            {technologies.map(tech => (
-              <div class="tech-item">
-                <i class={tech.icon}></i>
-                <span>{tech.name}</span>
+            <div class="hero-code">
+              <div class="code-header">
+                <span class="code-dot red"></span>
+                <span class="code-dot yellow"></span>
+                <span class="code-dot green"></span>
+                <span class="code-title">Program.cs</span>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Featured Projects -->
-    <section class="projects-preview">
-      <div class="container">
-        <h2 class="section-title">Proyectos Destacados</h2>
-        <div class="projects-grid">
-          <!-- Proyecto 1 -->
-          <div class="project-card">
-            <div class="project-icon">
-              <i class="ri-shopping-cart-2-line"></i>
-            </div>
-            <h3>E-commerce API</h3>
-            <p>API REST para plataforma de e-commerce con microservicios y Azure.</p>
-            <div class="project-tech">
-              <span>.NET 10</span>
-              <span>Redis</span>
-              <span>Kafka</span>
-            </div>
-          </div>
-          
-          <!-- Proyecto 2 -->
-          <div class="project-card">
-            <div class="project-icon">
-              <i class="ri-bank-line"></i>
-            </div>
-            <h3>Sistema Bancario</h3>
-            <p>Backend para transacciones bancarias con seguridad y auditoría.</p>
-            <div class="project-tech">
-              <span>C# 12</span>
-              <span>SQL Server</span>
-              <span>JWT</span>
-            </div>
-          </div>
-          
-          <!-- Proyecto 3 -->
-          <div class="project-card">
-            <div class="project-icon">
-              <i class="ri-health-book-line"></i>
-            </div>
-            <h3>HealthCare API</h3>
-            <p>Sistema de gestión médica con HL7 FHIR y telemedicina.</p>
-            <div class="project-tech">
-              <span>ASP.NET</span>
-              <span>Docker</span>
-              <span>MongoDB</span>
+              <pre><code class="language-csharp">{csharpCode}</code></pre>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  </main>
-  
-  <Footer />
-</Layout>
 
-<style>
-  /* Hero Section */
-  .hero {
-    padding: 4rem 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  }
-  
-  .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-  
-  .hero-title {
-    font-size: 3.5rem;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-  }
-  
-  .highlight {
-    color: var(--primary);
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .hero-description {
-    font-size: 1.2rem;
-    color: var(--gray);
-    margin-bottom: 2rem;
-    max-width: 600px;
-  }
-  
-  .hero-buttons {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .btn {
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: all 0.3s;
-  }
-  
-  .btn-primary {
-    background: var(--primary);
-    color: white;
-  }
-  
-  .btn-primary:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
-  }
-  
-  .btn-outline {
-    border: 2px solid var(--primary);
-    color: var(--primary);
-  }
-  
-  .btn-outline:hover {
-    background: var(--primary);
-    color: white;
-  }
-  
-  .hero-code {
-    background: var(--code-bg);
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
-  }
-  
-  .hero-code pre {
-    margin: 0;
-    overflow-x: auto;
-  }
-  
-  .hero-code code {
-    color: #d4d4d4;
-    font-family: 'Fira Code', monospace;
-    font-size: 0.9rem;
-  }
-  
-  /* Tech Stack */
-  .tech-stack {
-    margin-top: 4rem;
-  }
-  
-  .section-subtitle {
-    text-align: center;
-    color: var(--gray);
-    margin-bottom: 2rem;
-  }
-  
-  .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-  }
-  
-  .tech-item {
-    background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s;
-  }
-  
-  .tech-item:hover {
-    transform: translateY(-5px);
-  }
-  
-  .tech-item i {
-    color: var(--primary);
-    font-size: 1.2rem;
-  }
-  
-  /* Projects Preview */
-  .projects-preview {
-    padding: 5rem 0;
-    background: white;
-  }
-  
-  .section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-  }
-  
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-  
-  .project-card {
-    background: var(--light);
-    padding: 2rem;
-    border-radius: 12px;
-    border: 2px solid transparent;
-    transition: all 0.3s;
-    box-shadow: var(--shadow);
-  }
-  
-  .project-card:hover {
-    border-color: var(--primary);
-    transform: translateY(-5px);
-  }
-  
-  .project-icon {
-    font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-  }
-  
-  .project-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .project-tech {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-  }
-  
-  .project-tech span {
-    background: rgba(81, 43, 212, 0.1);
-    color: var(--primary);
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-  }
-  
-  @media (max-width: 992px) {
-    .hero-content {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-    
-    .hero-title {
-      font-size: 2.5rem;
-    }
-    
-    .hero-buttons {
-      justify-content: center;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .hero-title {
-      font-size: 2rem;
-    }
-    
-    .tech-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
+      <!-- Specialization Section -->
+      <section class="specialization">
+        <div class="container">
+          <h2 class="section-title">Especialización Backend</h2>
+          <p class="section-subtitle">
+            Enfocado en el desarrollo de soluciones backend escalables y
+            mantenibles
+          </p>
+
+          <div class="specialization-grid">
+            <div class="specialization-card">
+              <div class="spec-icon">
+                <i class="ri-server-line"></i>
+              </div>
+              <h3>APIs RESTful</h3>
+              <p>
+                Diseño e implementación de APIs REST siguiendo buenas prácticas
+                y estándares HTTP.
+              </p>
+              <ul class="spec-list">
+                <li>ASP.NET Core Web API</li>
+                <li>Minimal APIs</li>
+                <li>Documentación con Swagger</li>
+                <li>Versionado de APIs</li>
+              </ul>
+            </div>
+
+            <div class="specialization-card">
+              <div class="spec-icon">
+                <i class="ri-database-2-line"></i>
+              </div>
+              <h3>Base de Datos</h3>
+              <p>
+                Modelado y optimización de bases de datos relacionales y
+                operaciones eficientes.
+              </p>
+              <ul class="spec-list">
+                <li>SQL Server / PostgreSQL</li>
+                <li>Entity Framework Core</li>
+                <li>Migrations y Seed Data</li>
+                <li>Optimización de consultas</li>
+              </ul>
+            </div>
+
+            <div class="specialization-card">
+              <div class="spec-icon">
+                <i class="ri-cloud-line"></i>
+              </div>
+              <h3>Arquitectura</h3>
+              <p>
+                Diseño de arquitecturas limpias, escalables y mantenibles para
+                aplicaciones empresariales.
+              </p>
+              <ul class="spec-list">
+                <li>Clean Architecture</li>
+                <li>Patrón Repository</li>
+                <li>Inyección de Dependencias</li>
+                <li>Pruebas Unitarias</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technologies Section -->
+      <section class="technologies" id="technologies">
+        <div class="container">
+          <h2 class="section-title">Stack Tecnológico</h2>
+          <p class="section-subtitle">
+            Tecnologías y herramientas con las que trabajo diariamente
+          </p>
+
+          <div class="tech-categories">
+            <div class="category">
+              <h3 class="category-title">
+                <i class="ri-code-s-slash-line"></i> Backend Principal
+              </h3>
+              <div class="tech-grid">
+                {
+                  backendTech
+                    .filter((t) =>
+                      ["Framework", "Lenguaje", "ORM"].includes(t.category),
+                    )
+                    .map((tech) => (
+                      <div class="tech-item">
+                        <div class="tech-header">
+                          <i class={tech.icon} />
+                          <span>{tech.name}</span>
+                        </div>
+                        <div class="tech-level">
+                          <div class="level-bar">
+                            <div
+                              class="level-fill"
+                              style={`width: ${tech.level}%`}
+                            />
+                          </div>
+                          <span class="level-percent">{tech.level}%</span>
+                        </div>
+                      </div>
+                    ))
+                }
+              </div>
+            </div>
+
+            <div class="category">
+              <h3 class="category-title">
+                <i class="ri-tools-line"></i> Herramientas & DevOps
+              </h3>
+              <div class="tools-grid">
+                <div class="tool-item">
+                  <i class="ri-git-branch-line"></i>
+                  <span>Git & GitHub</span>
+                </div>
+                <div class="tool-item">
+                  <i class="ri-docker-line"></i>
+                  <span>Docker</span>
+                </div>
+                <div class="tool-item">
+                  <i class="ri-terminal-box-line"></i>
+                  <span>CLI Tools</span>
+                </div>
+                <div class="tool-item">
+                  <i class="ri-bug-line"></i>
+                  <span>Debugging</span>
+                </div>
+                <div class="tool-item">
+                  <i class="ri-visual-studio-fill"></i>
+                  <span>Visual Studio</span>
+                </div>
+                <div class="tool-item">
+                  <i class="ri-vscode-fill"></i>
+                  <span>VS Code</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="projects" id="projects">
+        <div class="container">
+          <h2 class="section-title">Proyectos Destacados</h2>
+          <p class="section-subtitle">
+            Implementaciones prácticas de arquitecturas backend
+          </p>
+
+          <div class="projects-grid">
+            {
+              featuredProjects.map((project) => (
+                <div class="project-card">
+                  <div class="project-header">
+                    <div class="project-type">{project.type}</div>
+                    <div class="project-links">
+                      <a href={project.githubUrl} class="project-link">
+                        <i class="ri-github-fill" />
+                      </a>
+                    </div>
+                  </div>
+                  <h3>{project.title}</h3>
+                  <p class="project-description">{project.description}</p>
+
+                  <div class="project-tech">
+                    {project.tech.map((tech) => (
+                      <span class="tech-tag">{tech}</span>
+                    ))}
+                  </div>
+
+                  <div class="project-features">
+                    <h4>Características:</h4>
+                    <ul>
+                      {project.features.map((feature) => (
+                        <li>{feature}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <a href={project.githubUrl} class="btn btn-small">
+                    <i class="ri-external-link-line" /> Ver Repositorio
+                  </a>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section class="experience">
+        <div class="container">
+          <h2 class="section-title">Experiencia & Educación</h2>
+
+          <div class="timeline">
+            {
+              experience.map((exp, index) => (
+                <div
+                  class={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}
+                >
+                  <div class="timeline-content">
+                    <div class="timeline-header">
+                      <h3>{exp.role}</h3>
+                      <span class="timeline-period">{exp.period}</span>
+                    </div>
+                    <p class="timeline-description">{exp.description}</p>
+                    <div class="timeline-highlights">
+                      {exp.highlights.map((highlight) => (
+                        <span class="highlight-tag">{highlight}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
+
+            <!-- Educación -->
+            <div class="timeline-item left">
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>Ingeniería en Computación</h3>
+                  <span class="timeline-period">3er Año</span>
+                </div>
+                <p class="timeline-description">
+                  Universidad de Matanzas, Cuba. Enfoque en fundamentos de
+                  computación, algoritmos, estructuras de datos y arquitectura
+                  de software.
+                </p>
+                <div class="timeline-highlights">
+                  <span class="highlight-tag">Algoritmos & Estructuras</span>
+                  <span class="highlight-tag">Bases de Datos</span>
+                  <span class="highlight-tag">Ingeniería de Software</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </section>
+
+    <style>
+      /* Hero Updates */
+      .hero-badge {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .badge {
+        background: rgba(81, 43, 212, 0.1);
+        color: var(--primary);
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .hero-stats {
+        display: flex;
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+
+      .stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        line-height: 1;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: var(--gray);
+        margin-top: 0.3rem;
+      }
+
+      .code-header {
+        background: #2d2d2d;
+        padding: 0.8rem 1rem;
+        border-radius: 8px 8px 0 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .code-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+
+      .code-dot.red {
+        background: #ff5f56;
+      }
+      .code-dot.yellow {
+        background: #ffbd2e;
+      }
+      .code-dot.green {
+        background: #27ca3f;
+      }
+
+      .code-title {
+        color: #888;
+        font-size: 0.9rem;
+        margin-left: 1rem;
+      }
+
+      /* Specialization Section */
+      .specialization {
+        padding: 5rem 0;
+        background: white;
+      }
+
+      .specialization-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .specialization-card {
+        background: var(--light);
+        padding: 2rem;
+        border-radius: 12px;
+        transition: transform 0.3s;
+        border: 1px solid rgba(81, 43, 212, 0.1);
+      }
+
+      .specialization-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary);
+      }
+
+      .spec-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .specialization-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .spec-list {
+        list-style: none;
+        margin-top: 1rem;
+      }
+
+      .spec-list li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .spec-list li:before {
+        content: "✓";
+        color: var(--success);
+        margin-right: 0.5rem;
+      }
+
+      /* Technologies Section */
+      .technologies {
+        padding: 5rem 0;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      }
+
+      .tech-categories {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        margin-top: 2rem;
+      }
+
+      .category-title {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--dark);
+      }
+
+      .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+
+      .tech-item {
+        background: white;
+        padding: 1.2rem;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+
+      .tech-header {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .tech-header i {
+        font-size: 1.5rem;
+        color: var(--primary);
+      }
+
+      .tech-level {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .level-bar {
+        flex: 1;
+        height: 8px;
+        background: #e9ecef;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .level-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        border-radius: 4px;
+      }
+
+      .level-percent {
+        font-size: 0.9rem;
+        color: var(--gray);
+        min-width: 40px;
+      }
+
+      .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+      }
+
+      .tool-item {
+        background: white;
+        padding: 1.2rem;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s;
+      }
+
+      .tool-item:hover {
+        transform: translateY(-3px);
+      }
+
+      .tool-item i {
+        font-size: 1.5rem;
+        color: var(--primary);
+      }
+
+      /* Projects Section */
+      .projects {
+        padding: 5rem 0;
+        background: white;
+      }
+
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .project-type {
+        background: rgba(81, 43, 212, 0.1);
+        color: var(--primary);
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .project-link {
+        color: var(--gray);
+        font-size: 1.2rem;
+        transition: color 0.3s;
+      }
+
+      .project-link:hover {
+        color: var(--primary);
+      }
+
+      .project-description {
+        color: var(--gray);
+        margin: 1rem 0;
+      }
+
+      .tech-tag {
+        background: rgba(81, 43, 212, 0.1);
+        color: var(--primary);
+        padding: 0.3rem 0.8rem;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+      }
+
+      .project-features {
+        margin: 1.5rem 0;
+      }
+
+      .project-features h4 {
+        margin-bottom: 0.5rem;
+        color: var(--dark);
+      }
+
+      .project-features ul {
+        list-style: none;
+        padding-left: 1rem;
+      }
+
+      .project-features li {
+        padding: 0.3rem 0;
+        color: var(--gray);
+      }
+
+      .project-features li:before {
+        content: "•";
+        color: var(--primary);
+        margin-right: 0.5rem;
+      }
+
+      .btn-small {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+
+      /* Experience Section */
+      .experience {
+        padding: 5rem 0;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      }
+
+      .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 3rem auto 0;
+      }
+
+      .timeline:before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 100%;
+        background: var(--primary);
+      }
+
+      .timeline-item {
+        width: calc(50% - 2rem);
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .timeline-item.left {
+        margin-right: auto;
+        text-align: right;
+      }
+
+      .timeline-item.right {
+        margin-left: auto;
+      }
+
+      .timeline-content {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+
+      .timeline-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.8rem;
+      }
+
+      .timeline-period {
+        color: var(--primary);
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+
+      .highlight-tag {
+        background: rgba(81, 43, 212, 0.1);
+        color: var(--primary);
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        margin: 0.3rem;
+        display: inline-block;
+      }
+
+      .languages {
+        margin-top: 2rem;
+      }
+
+      .language-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem 0;
+      }
+
+      .language-level {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .level-dots {
+        display: flex;
+        gap: 0.3rem;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #e9ecef;
+      }
+
+      .dot.active {
+        background: var(--primary);
+      }
+
+      /* Form */
+      .form {
+        background: var(--light);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+      }
+
+      .form h3 {
+        margin-bottom: 1.5rem;
+        color: var(--dark);
+      }
+
+      .form-group {
+        margin-bottom: 1.2rem;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+      }
+
+      @media (max-width: 992px) {
+        .contact-content {
+          grid-template-columns: 1fr;
+        }
+
+        .timeline:before {
+          left: 1rem;
+        }
+
+        .timeline-item {
+          width: calc(100% - 3rem);
+          margin-left: 3rem;
+        }
+
+        .timeline-item.left {
+          text-align: left;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-stats {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1.5rem;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+        }
+
+        .specialization-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .tech-grid,
+        .tools-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .project-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+      }
+    </style>
+  </main>
+</Layout>

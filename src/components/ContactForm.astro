@@ -1,0 +1,161 @@
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2 class="section-title">¿Listo para Colaborar?</h2>
+                <p class="contact-description">
+                    Busco oportunidades remotas para contribuir en proyectos
+                    backend desafiantes. Especialmente interesado en roles .NET,
+                    arquitecturas de microservicios y APIs escalables.
+                </p>
+
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="ri-mail-fill"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:marconchelo12@gmail.com"
+                                >marconchelo12@gmail.com</a
+                            >
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="ri-phone-fill"></i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <a href="tel:+5355505961">+53 55505961</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="ri-map-pin-2-fill"></i>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <span>Matanzas, Cuba 🇨🇺</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="ri-global-line"></i>
+                        <div>
+                            <h4>Disponibilidad</h4>
+                            <span>Remoto Worldwide 🌐</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="languages">
+                    <h4>Idiomas</h4>
+                    <div class="language-item">
+                        <span>Español</span>
+                        <div class="language-level">
+                            <div class="level-dots">
+                                {
+                                    [...Array(5)].map((_, i) => (
+                                        <div class="dot active" />
+                                    ))
+                                }
+                            </div>
+                            <span>Nativo</span>
+                        </div>
+                    </div>
+                    <div class="language-item">
+                        <span>Inglés</span>
+                        <div class="language-level">
+                            <div class="level-dots">
+                                {
+                                    [...Array(3)].map((_, i) => (
+                                        <div class="dot active" />
+                                    ))
+                                }
+                                {
+                                    [...Array(2)].map((_, i) => (
+                                        <div class="dot" />
+                                    ))
+                                }
+                            </div>
+                            <span>B1 Intermedio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form name="contact" method="POST" data-netlify="true">
+                    <h3>Enviar Mensaje</h3>
+                    <div class="form-group">
+                        <input type="text" placeholder="Tu Nombre" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Tu Email" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Asunto" required />
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tu Mensaje" rows="5" required
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="ri-send-plane-line"></i> Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Contact Section */
+    .contact {
+        padding: 5rem 0;
+        background: white;
+    }
+
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+
+    .contact-description {
+        color: var(--gray);
+        margin: 1rem 0 2rem;
+        line-height: 1.8;
+    }
+
+    .contact-details {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .contact-item i {
+        font-size: 1.5rem;
+        color: var(--primary);
+    }
+
+    .contact-item h4 {
+        margin-bottom: 0.3rem;
+        color: var(--dark);
+    }
+
+    .contact-item a {
+        color: var(--gray);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .contact-item a:hover {
+        color: var(--primary);
+    }
+</style>
