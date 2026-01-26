@@ -1,34 +1,40 @@
+---
+const navItems = [
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about' },
+  { name: 'Skills', path: '/skills' },
+  { name: 'Projects', path: '/projects' },
+  { name: 'Contact', path: '/contact' }
+];
+---
+
 <header class="header">
   <div class="container">
     <nav class="navbar">
       <div class="logo">
-        <span class="logo-text">.NET</span>
-        <span class="logo-version">10</span>
+        <a href="/">MazMorrDev</a>
       </div>
-      
       <ul class="nav-links">
-        <li><a href="/" class="nav-link">Inicio</a></li>
-        <li><a href="/about" class="nav-link">Sobre mí</a></li>
-        <li><a href="/projects" class="nav-link">Proyectos</a></li>
-        <li><a href="/skills" class="nav-link">Habilidades</a></li>
-        <li><a href="/contact" class="nav-link">Contacto</a></li>
+        {
+          navItems.map(item => (
+            <li>
+              <a href={item.path} class="nav-link">{item.name}</a>
+            </li>
+          ))
+        }
       </ul>
-      
-      <div class="mobile-menu">
-        <i class="ri-menu-line"></i>
-      </div>
     </nav>
   </div>
 </header>
 
 <style>
   .header {
-    background-color: white;
-    box-shadow: var(--shadow);
+    background-color: var(--secondary-black);
+    padding: 1.5rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 1rem 0;
+    border-bottom: 2px solid var(--primary-red);
   }
   
   .navbar {
@@ -37,24 +43,14 @@
     align-items: center;
   }
   
-  .logo {
-    display: flex;
-    align-items: center;
+  .logo a {
+    font-size: 1.8rem;
     font-weight: 700;
-    font-size: 1.5rem;
+    color: var(--primary-white);
   }
   
-  .logo-text {
-    color: var(--primary);
-  }
-  
-  .logo-version {
-    background: var(--primary);
-    color: white;
-    padding: 0.1rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    margin-left: 0.3rem;
+  .logo a:hover {
+    color: var(--primary-red);
   }
   
   .nav-links {
@@ -64,45 +60,39 @@
   }
   
   .nav-link {
-    text-decoration: none;
-    color: var(--dark);
+    color: var(--primary-white);
     font-weight: 500;
-    transition: color 0.3s;
+    padding: 0.5rem 0;
     position: relative;
   }
   
   .nav-link:hover {
-    color: var(--primary);
+    color: var(--primary-red);
   }
   
   .nav-link::after {
     content: '';
     position: absolute;
+    bottom: 0;
+    left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary);
-    left: 0;
-    bottom: -5px;
-    transition: width 0.3s;
+    background-color: var(--primary-red);
+    transition: var(--transition);
   }
   
   .nav-link:hover::after {
     width: 100%;
   }
   
-  .mobile-menu {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  
   @media (max-width: 768px) {
-    .nav-links {
-      display: none;
+    .navbar {
+      flex-direction: column;
+      gap: 1rem;
     }
     
-    .mobile-menu {
-      display: block;
+    .nav-links {
+      gap: 1rem;
     }
   }
 </style>

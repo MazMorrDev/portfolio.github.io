@@ -5,80 +5,84 @@ const currentYear = new Date().getFullYear();
 <footer class="footer">
   <div class="container">
     <div class="footer-content">
-      <div class="footer-brand">
-        <div class="logo">
-          <span class="logo-text">.NET</span>
-          <span class="logo-version">10</span>
-        </div>
-        <p class="footer-tagline">
-          Especializado en desarrollo backend con tecnologías Microsoft
-        </p>
-        <div class="footer-social">
-          <a href="https://github.com/tu-usuario" class="social-link" target="_blank">
-            <i class="ri-github-fill"></i>
+      <div class="footer-section">
+        <h3>MazMorrDev</h3>
+        <p>Backend Developer specializing in .NET and modern web technologies</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <div class="social-links">
+          <a href="https://github.com/MazMorrDev" target="_blank" rel="noopener noreferrer" class="social-link">
+            GitHub
           </a>
-          <a href="https://linkedin.com/in/tu-perfil" class="social-link" target="_blank">
-            <i class="ri-linkedin-box-fill"></i>
-          </a>
-          <a href="mailto:marconchelo12@gmail.com" class="social-link">
-            <i class="ri-mail-fill"></i>
+          <a href="https://linkedin.com/in/marco-antonio-romero-albanez-2653372b2" target="_blank" rel="noopener noreferrer" class="social-link">
+            LinkedIn
           </a>
         </div>
       </div>
       
-      <div class="footer-links">
-        <div class="link-group">
-          <h4>Especialización</h4>
-          <ul>
-            <li>.NET 10 / C# 14</li>
-            <li>ASP.NET Core APIs</li>
-            <li>SQL Server & EF Core</li>
-            <li>Arquitectura Limpia</li>
-          </ul>
-        </div>
-        
-        <div class="link-group">
-          <h4>Enlaces Rápidos</h4>
-          <ul>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="#technologies">Tecnologías</a></li>
-            <li><a href="#projects">Proyectos</a></li>
-            <li><a href="#contact">Contacto</a></li>
-          </ul>
-        </div>
-        
-        <div class="link-group">
-          <h4>Contacto Directo</h4>
-          <ul>
-            <li>📧 marconchelo12@gmail.com</li>
-            <li>📱 +53 55505961</li>
-            <li>📍 Matanzas, Cuba</li>
-            <li>🌐 Disponible para remoto</li>
-          </ul>
-        </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>marconchelo12@gmail.com</p>
+        <p>+53 55505961</p>
       </div>
     </div>
     
     <div class="footer-bottom">
-      <p>&copy; {currentYear} Marco A. Romero - Backend .NET Developer. Todos los derechos reservados.</p>
+      <p>&copy; {currentYear} Marco Antonio Romero Albanez. All rights reserved.</p>
     </div>
   </div>
 </footer>
 
 <style>
-  .footer-social {
+  .footer {
+    background-color: var(--secondary-black);
+    padding: 3rem 0 1.5rem;
+    border-top: 2px solid var(--primary-red);
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-section h3 {
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+  }
+  
+  .footer-section h4 {
+    color: var(--primary-white);
+    margin-bottom: 1rem;
+  }
+  
+  .social-links {
     display: flex;
     gap: 1rem;
-    margin-top: 1rem;
+    flex-direction: column;
   }
   
-  .footer-social .social-link {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+  .social-link {
+    color: #ddd;
+    transition: var(--transition);
   }
   
-  .footer-social .social-link:hover {
-    background: white;
-    color: var(--primary);
+  .social-link:hover {
+    color: var(--primary-red);
+    padding-left: 0.5rem;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--medium-gray);
+  }
+  
+  .footer-bottom p {
+    color: #999;
+    font-size: 0.9rem;
   }
 </style>

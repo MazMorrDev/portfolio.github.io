@@ -1,0 +1,33 @@
+---
+export interface Props {
+  name: string;
+  category: string;
+}
+
+const { name, category } = Astro.props;
+---
+
+<div class="skill-badge" data-category={category}>
+  {name}
+</div>
+
+<style>
+  .skill-badge {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background-color: var(--secondary-black);
+    color: var(--primary-white);
+    border: 1px solid var(--medium-gray);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+    cursor: default;
+  }
+  
+  .skill-badge:hover {
+    background-color: var(--primary-red);
+    border-color: var(--primary-red);
+    transform: translateY(-2px);
+  }
+</style>

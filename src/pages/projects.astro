@@ -1,0 +1,268 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+
+<Layout>
+  <section class="projects-hero py-3">
+    <div class="container">
+      <div class="text-center mb-3">
+        <h1>My Projects</h1>
+        <p class="subtitle">A showcase of my work, focusing on backend development with .NET and full-stack applications</p>
+      </div>
+      
+      <div class="projects-grid">
+        <ProjectCard
+          title="MiniMaz ERP - Inventory & Sales System"
+          description="A comprehensive full-stack business management system built with modern .NET and Angular. Features complete CRUD operations for inventory, users, and expenses with modular architecture and comprehensive testing using xUnit for backend controllers. Recently refactored for cleaner code and better maintainability."
+          technologies={['C#', 'ASP.NET Core', 'Entity Framework', 'Angular', 'TypeScript', 'PostgreSQL', 'xUnit', 'REST API']}
+          backendRepo="https://github.com/MazMorrDev/MiniMazErpBack"
+          frontendRepo="https://github.com/MazMorrDev/MiniMazErpFront"
+        />
+        
+        <ProjectCard
+          title="Business Manager Lite"
+          description="A lightweight business management application designed for small businesses and entrepreneurs. Built with Spring Boot and JavaFX, featuring client & supplier management, product inventory control, sales & invoice management, and real-time data persistence with H2 database."
+          technologies={['Java', 'Spring Boot', 'JavaFX', 'H2 Database', 'Maven', 'MVC Pattern']}
+          backendRepo="https://github.com/MazMorrDev/Business-Manager-Lite"
+        />
+        
+        <ProjectCard
+          title="API Gateway & Authentication Service"
+          description="A secure API gateway with JWT authentication and authorization service built with ASP.NET Core. Features role-based access control, rate limiting, and request/response logging."
+          technologies={['ASP.NET Core', 'JWT', 'OAuth 2.0', 'Redis', 'Docker', 'Swagger', 'C#']}
+        />
+        
+        <ProjectCard
+          title="E-commerce Microservices Backend"
+          description="A microservices-based e-commerce system using .NET 8. Features include product catalog, shopping cart, order processing, payment integration, and user authentication with clean architecture principles."
+          technologies={['C#', '.NET 8', 'Microservices', 'Docker', 'PostgreSQL', 'Redis', 'RabbitMQ']}
+        />
+      </div>
+      
+      <div class="github-cta text-center mt-3">
+        <h3>Want to see more?</h3>
+        <p>Check out my GitHub profile for additional projects, code samples, and contributions</p>
+        <a href="https://github.com/MazMorrDev" target="_blank" rel="noopener noreferrer" class="btn mt-1">
+          Visit My GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-3" style="background-color: var(--secondary-black);">
+    <div class="container">
+      <h2 class="text-center mb-3">Development Approach</h2>
+      
+      <div class="approach-grid">
+        <div class="approach-card">
+          <div class="approach-icon">🏗️</div>
+          <h3>Architecture First</h3>
+          <p>Focus on clean architecture, SOLID principles, and scalable design patterns from the start of every project.</p>
+        </div>
+        
+        <div class="approach-card">
+          <div class="approach-icon">🧪</div>
+          <h3>Test-Driven Development</h3>
+          <p>Implement comprehensive testing strategies including unit tests, integration tests, and API testing.</p>
+        </div>
+        
+        <div class="approach-card">
+          <div class="approach-icon">🔒</div>
+          <h3>Security Focused</h3>
+          <p>Build secure applications with proper authentication, authorization, and data protection mechanisms.</p>
+        </div>
+        
+        <div class="approach-card">
+          <div class="approach-icon">📈</div>
+          <h3>Performance Optimized</h3>
+          <p>Optimize database queries, implement caching strategies, and ensure efficient resource utilization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-3">
+    <div class="container">
+      <h2 class="text-center mb-3">Technology Stack in Action</h2>
+      
+      <div class="tech-stack-demo">
+        <div class="tech-category">
+          <h3>Backend Technologies</h3>
+          <div class="tech-list">
+            <div class="tech-item">
+              <span class="tech-name">C# & .NET</span>
+              <span class="tech-desc">Primary backend language and framework for enterprise applications</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">ASP.NET Core</span>
+              <span class="tech-desc">Web framework for building RESTful APIs and web applications</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Entity Framework</span>
+              <span class="tech-desc">ORM for database operations and migrations</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Java & Spring Boot</span>
+              <span class="tech-desc">Alternative backend stack for specific project requirements</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tech-category">
+          <h3>Database & Infrastructure</h3>
+          <div class="tech-list">
+            <div class="tech-item">
+              <span class="tech-name">PostgreSQL</span>
+              <span class="tech-desc">Primary relational database for production applications</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">MySQL / SQL Server</span>
+              <span class="tech-desc">Additional database systems for different project needs</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Docker</span>
+              <span class="tech-desc">Containerization for consistent development and deployment</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Git & GitHub</span>
+              <span class="tech-desc">Version control and collaborative development</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .projects-hero {
+    min-height: 100vh;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: #ddd;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .github-cta {
+    padding: 3rem;
+    background-color: var(--secondary-black);
+    border-radius: 8px;
+    border: 1px solid var(--medium-gray);
+  }
+  
+  .github-cta h3 {
+    color: var(--primary-white);
+    margin-bottom: 0.5rem;
+  }
+  
+  .github-cta p {
+    color: #ddd;
+  }
+  
+  .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .approach-card {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--primary-black);
+    border-radius: 8px;
+    border: 1px solid var(--medium-gray);
+    transition: var(--transition);
+  }
+  
+  .approach-card:hover {
+    border-color: var(--primary-red);
+    transform: translateY(-5px);
+  }
+  
+  .approach-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .approach-card h3 {
+    color: var(--primary-white);
+    margin-bottom: 1rem;
+  }
+  
+  .approach-card p {
+    color: #ddd;
+  }
+  
+  .tech-stack-demo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .tech-category {
+    background-color: var(--secondary-black);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--medium-gray);
+  }
+  
+  .tech-category h3 {
+    color: var(--primary-red);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border: none;
+  }
+  
+  .tech-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .tech-item {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--medium-gray);
+  }
+  
+  .tech-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .tech-name {
+    color: var(--primary-white);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tech-desc {
+    color: #ddd;
+    font-size: 0.95rem;
+  }
+  
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .tech-stack-demo {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

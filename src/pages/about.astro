@@ -1,0 +1,196 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <section class="about-hero py-3">
+    <div class="container">
+      <div class="text-center mb-3">
+        <h1>About Me</h1>
+      </div>
+      
+      <div class="about-content">
+        <div class="about-text fade-in">
+          <h2>Marco Antonio Romero Albanez</h2>
+          <p class="subtitle">Computer Engineering Student | Backend Developer | .NET & Angular Enthusiast</p>
+          
+          <p>
+            I'm a passionate software developer from <strong>Matanzas, Cuba</strong> 🇨🇺 currently in my 3rd year of Computer Engineering. 
+            I specialize in building robust, scalable applications with focus on <strong>.NET and Angular</strong>.
+          </p>
+          
+          <p>
+            With experience as a freelancer and teaching assistant, I bring both technical expertise and strong 
+            collaboration skills to every project. I'm passionate about clean code, software architecture, and 
+            creating solutions that make a real impact.
+          </p>
+          
+          <h3>Education & Background</h3>
+          <p>
+            Currently pursuing my Computer Engineering degree while actively working on professional projects. 
+            My academic background combined with hands-on experience has given me a solid foundation in both 
+            theoretical concepts and practical application.
+          </p>
+          
+          <h3>Languages</h3>
+          <div class="languages">
+            <div class="language-item">
+              <span class="language-name">Spanish</span>
+              <div class="language-level">
+                <div class="level-bar" style="width: 100%"></div>
+                <span class="level-text">Native</span>
+              </div>
+            </div>
+            
+            <div class="language-item">
+              <span class="language-name">English</span>
+              <div class="language-level">
+                <div class="level-bar" style="width: 65%"></div>
+                <span class="level-text">B1 Intermediate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-3" style="background-color: var(--secondary-black);">
+    <div class="container">
+      <h2 class="text-center mb-3">My Journey</h2>
+      
+      <div class="journey-timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2023 - Present</div>
+          <div class="timeline-content">
+            <h3>Freelance Development</h3>
+            <p>Working on various projects using .NET ecosystem, Angular, and modern web technologies. Building full-stack applications and backend systems.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-year">2022 - Present</div>
+          <div class="timeline-content">
+            <h3>Computer Engineering Student</h3>
+            <p>Currently in 3rd year, focusing on software engineering, algorithms, data structures, and system design principles.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-year">2022</div>
+          <div class="timeline-content">
+            <h3>Teaching Assistant</h3>
+            <p>Assisted in programming courses, helping students understand fundamental concepts and practical implementation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .about-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .about-text h2 {
+    color: var(--primary-white);
+    border: none;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: var(--primary-red);
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+  
+  .about-text h3 {
+    color: var(--primary-white);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .languages {
+    margin-top: 1rem;
+  }
+  
+  .language-item {
+    margin-bottom: 1.5rem;
+  }
+  
+  .language-name {
+    display: block;
+    color: var(--primary-white);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .language-level {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .level-bar {
+    flex-grow: 1;
+    height: 8px;
+    background-color: var(--primary-red);
+    border-radius: 4px;
+  }
+  
+  .level-text {
+    color: #ddd;
+    font-size: 0.9rem;
+    min-width: 100px;
+  }
+  
+  .journey-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .timeline-item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--medium-gray);
+  }
+  
+  .timeline-year {
+    min-width: 120px;
+    color: var(--primary-red);
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  
+  .timeline-content h3 {
+    color: var(--primary-white);
+    margin-bottom: 0.5rem;
+  }
+  
+  .timeline-content p {
+    color: #ddd;
+  }
+  
+  @media (max-width: 768px) {
+    .timeline-item {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .timeline-year {
+      min-width: auto;
+    }
+  }
+</style>

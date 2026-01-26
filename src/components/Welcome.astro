@@ -1,0 +1,111 @@
+---
+import profilePic from '../assets/profile.jpg';
+---
+
+<section class="welcome">
+  <div class="container">
+    <div class="welcome-content">
+      <div class="profile-section">
+        <div class="profile-image-container">
+          <!-- Aquí puedes agregar tu foto -->
+          <div class="profile-image-placeholder">
+            <span>Your Photo Here</span>
+          </div>
+        </div>
+        <div class="profile-info">
+          <h1 class="fade-in">Marco Antonio Romero Albanez</h1>
+          <h2 class="fade-in">Backend Developer | .NET & C# Specialist</h2>
+          <p class="tagline fade-in">Building robust, scalable applications with modern technologies</p>
+          <div class="cta-buttons fade-in">
+            <a href="/projects" class="btn">View Projects</a>
+            <a href="/contact" class="btn btn-outline">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .welcome {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--secondary-black) 0%, var(--primary-black) 100%);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .welcome-content {
+    text-align: center;
+  }
+  
+  .profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .profile-image-container {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .profile-image-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--medium-gray);
+    border: 5px solid var(--primary-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-white);
+    font-size: 1.2rem;
+    overflow: hidden;
+  }
+  
+  .profile-info {
+    max-width: 800px;
+  }
+  
+  .profile-info h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .profile-info h2 {
+    font-size: 1.8rem;
+    color: var(--primary-white);
+    margin-bottom: 1.5rem;
+    border: none;
+  }
+  
+  .tagline {
+    font-size: 1.3rem;
+    color: #ddd;
+    margin-bottom: 2.5rem;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  @media (min-width: 768px) {
+    .profile-section {
+      flex-direction: row;
+      text-align: left;
+    }
+    
+    .profile-info h1 {
+      font-size: 3.5rem;
+    }
+    
+    .cta-buttons {
+      justify-content: flex-start;
+    }
+  }
+</style>

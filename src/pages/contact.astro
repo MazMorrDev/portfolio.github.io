@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Layout>
+  <section class="contact-hero py-3">
+    <div class="container">
+      <div class="text-center mb-3">
+        <h1>Get In Touch</h1>
+        <p class="subtitle">I'm always open to discussing new opportunities, projects, or collaboration</p>
+      </div>
+      
+      <div class="contact-content">
+        <div class="contact-info fade-in">
+          <h2>Contact Information</h2>
+          
+          <div class="contact-item">
+            <h3>Email</h3>
+            <a href="mailto:marconchelo12@gmail.com" class="contact-link">marconchelo12@gmail.com</a>
+          </div>
+          
+          <div class="contact-item">
+            <h3>Phone</h3>
+            <a href="tel:+5355505961" class="contact-link">+53 55505961</a>
+          </div>
+          
+          <div class="contact-item">
+            <h3>Location</h3>
+            <p>Matanzas, Cuba</p>
+            <p class="availability">Open to Remote Opportunities Worldwide</p>
+          </div>
+          
+          <div class="social-links">
+            <h3>Connect With Me</h3>
+            <div class="social-icons">
+              <a href="https://github.com/MazMorrDev" target="_blank" rel="noopener noreferrer" class="social-icon">
+                GitHub
+              </a>
+              <a href="https://linkedin.com/in/marco-antonio-romero-albanez-2653372b2" target="_blank" rel="noopener noreferrer" class="social-icon">
+                LinkedIn
+              </a>
+            </div>
+          </div>
+          
+          <div class="contact-note">
+            <h3>Response Time</h3>
+            <p>I typically respond within 24-48 hours. For urgent matters, please call or text.</p>
+          </div>
+        </div>
+        
+        <div class="contact-form-container fade-in">
+          <h2>Send Me a Message</h2>
+          <ContactForm />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-3" style="background-color: var(--secondary-black);">
+    <div class="container text-center">
+      <h2 class="mb-2">Open to Opportunities</h2>
+      <p class="mb-2" style="max-width: 600px; margin: 0 auto;">
+        I'm currently seeking challenging backend development roles, particularly those involving .NET technologies, 
+        microservices architecture, or cloud-based solutions. I'm also open to freelance projects and collaborations.
+      </p>
+      <a href="mailto:marconchelo12@gmail.com" class="btn">Let's Work Together</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .contact-hero {
+    min-height: 80vh;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: #ddd;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .contact-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .contact-info h2,
+  .contact-form-container h2 {
+    color: var(--primary-red);
+    margin-bottom: 2rem;
+    border: none;
+  }
+  
+  .contact-item {
+    margin-bottom: 2rem;
+  }
+  
+  .contact-item h3 {
+    color: var(--primary-white);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .contact-link {
+    color: #ddd;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-link:hover {
+    color: var(--primary-red);
+  }
+  
+  .availability {
+    color: var(--primary-red);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  
+  .social-links {
+    margin-bottom: 2rem;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .social-icon {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-black);
+    border: 1px solid var(--medium-gray);
+    border-radius: 4px;
+    color: var(--primary-white);
+    transition: var(--transition);
+  }
+  
+  .social-icon:hover {
+    background-color: var(--primary-red);
+    border-color: var(--primary-red);
+  }
+  
+  .contact-note h3 {
+    color: var(--primary-white);
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-note p {
+    color: #ddd;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-content {
+      gap: 2rem;
+    }
+    
+    .social-icons {
+      flex-direction: column;
+    }
+  }
+</style>

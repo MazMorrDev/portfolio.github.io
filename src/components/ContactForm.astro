@@ -1,161 +1,93 @@
-<!-- Contact Section -->
-<section class="contact" id="contact">
-    <div class="container">
-        <div class="contact-content">
-            <div class="contact-info">
-                <h2 class="section-title">¿Listo para Colaborar?</h2>
-                <p class="contact-description">
-                    Busco oportunidades remotas para contribuir en proyectos
-                    backend desafiantes. Especialmente interesado en roles .NET,
-                    arquitecturas de microservicios y APIs escalables.
-                </p>
+---
+// Formulario HTML básico que se envía a un endpoint
+// Necesitarás configurar un backend para procesarlo
+---
 
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <i class="ri-mail-fill"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <a href="mailto:marconchelo12@gmail.com"
-                                >marconchelo12@gmail.com</a
-                            >
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <i class="ri-phone-fill"></i>
-                        <div>
-                            <h4>Teléfono</h4>
-                            <a href="tel:+5355505961">+53 55505961</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <i class="ri-map-pin-2-fill"></i>
-                        <div>
-                            <h4>Ubicación</h4>
-                            <span>Matanzas, Cuba 🇨🇺</span>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <i class="ri-global-line"></i>
-                        <div>
-                            <h4>Disponibilidad</h4>
-                            <span>Remoto Worldwide 🌐</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="languages">
-                    <h4>Idiomas</h4>
-                    <div class="language-item">
-                        <span>Español</span>
-                        <div class="language-level">
-                            <div class="level-dots">
-                                {
-                                    [...Array(5)].map((_, i) => (
-                                        <div class="dot active" />
-                                    ))
-                                }
-                            </div>
-                            <span>Nativo</span>
-                        </div>
-                    </div>
-                    <div class="language-item">
-                        <span>Inglés</span>
-                        <div class="language-level">
-                            <div class="level-dots">
-                                {
-                                    [...Array(3)].map((_, i) => (
-                                        <div class="dot active" />
-                                    ))
-                                }
-                                {
-                                    [...Array(2)].map((_, i) => (
-                                        <div class="dot" />
-                                    ))
-                                }
-                            </div>
-                            <span>B1 Intermedio</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact-form">
-                <form name="contact" method="POST" data-netlify="true">
-                    <h3>Enviar Mensaje</h3>
-                    <div class="form-group">
-                        <input type="text" placeholder="Tu Nombre" required />
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Tu Email" required />
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Asunto" required />
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Tu Mensaje" rows="5" required
-                        ></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="ri-send-plane-line"></i> Enviar Mensaje
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
+<form 
+  class="contact-form" 
+  method="POST" 
+  action="https://formspree.io/f/mzzzraar"
+>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input 
+      type="text" 
+      id="name" 
+      name="name" 
+      required 
+      placeholder="Your name" 
+    />
+  </div>
+  
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input 
+      type="email" 
+      id="email" 
+      name="email" 
+      required 
+      placeholder="your.email@example.com" 
+    />
+  </div>
+  
+  <div class="form-group">
+    <label for="subject">Subject</label>
+    <input 
+      type="text" 
+      id="subject" 
+      name="subject" 
+      required 
+      placeholder="What is this regarding?" 
+    />
+  </div>
+  
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea 
+      id="message" 
+      name="message" 
+      rows="5" 
+      required 
+      placeholder="Your message here..."
+    ></textarea>
+  </div>
+  
+  <!-- Campo oculto para redirección después del envío -->
+  <input type="hidden" name="_next" value="https://tusitio.com/thank-you" />
+  
+  <!-- Campo oculto para el asunto del email -->
+  <input type="hidden" name="_subject" value="New message from portfolio" />
+  
+  <!-- Campo para prevenir spam -->
+  <input type="text" name="_gotcha" style="display:none" />
+  
+  <button type="submit" class="btn">Send Message</button>
+</form>
 
 <style>
-    /* Contact Section */
-    .contact {
-        padding: 5rem 0;
-        background: white;
-    }
-
-    .contact-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-    }
-
-    .contact-description {
-        color: var(--gray);
-        margin: 1rem 0 2rem;
-        line-height: 1.8;
-    }
-
-    .contact-details {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        margin: 2rem 0;
-    }
-
-    .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .contact-item i {
-        font-size: 1.5rem;
-        color: var(--primary);
-    }
-
-    .contact-item h4 {
-        margin-bottom: 0.3rem;
-        color: var(--dark);
-    }
-
-    .contact-item a {
-        color: var(--gray);
-        text-decoration: none;
-        transition: color 0.3s;
-    }
-
-    .contact-item a:hover {
-        color: var(--primary);
-    }
-</style>
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-white);
+    font-weight: 500;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--secondary-black);
+    border: 1px solid var(--medium-gray);
+    border-radius: 4px;
+    color: var(--primary-white);
+    font-size: 1rem;
+    transition

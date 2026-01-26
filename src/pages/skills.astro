@@ -1,0 +1,154 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+
+<Layout>
+  <section class="projects-hero py-3">
+    <div class="container">
+      <div class="text-center mb-3">
+        <h1>My Projects</h1>
+        <p class="subtitle">A showcase of my work, focusing on backend development with .NET and full-stack applications</p>
+      </div>
+      
+      <div class="projects-grid">
+        <ProjectCard
+          title="MiniMaz ERP - Inventory & Sales System"
+          description="A comprehensive full-stack business management system built with modern .NET and Angular. Features complete CRUD operations for inventory, users, and expenses with modular architecture and comprehensive testing using xUnit for backend controllers. Recently refactored for cleaner code and better maintainability."
+          technologies={['C#', 'ASP.NET Core', 'Entity Framework', 'Angular', 'TypeScript', 'PostgreSQL', 'xUnit', 'REST API']}
+          backendRepo="https://github.com/MazMorrDev/MiniMazErpBack"
+          frontendRepo="https://github.com/MazMorrDev/MiniMazErpFront"
+        />
+        
+        <ProjectCard
+          title="Business Manager Lite"
+          description="A lightweight business management application designed for small businesses and entrepreneurs. Built with Spring Boot and JavaFX, featuring client & supplier management, product inventory control, sales & invoice management, and real-time data persistence with H2 database."
+          technologies={['Java', 'Spring Boot', 'JavaFX', 'H2 Database', 'Maven', 'MVC Pattern']}
+          backendRepo="https://github.com/MazMorrDev/Business-Manager-Lite"
+        />
+        
+        <ProjectCard
+          title="Coming Soon - E-commerce Backend"
+          description="A microservices-based e-commerce backend system using .NET and various cloud technologies. Will feature product catalog, shopping cart, order processing, payment integration, and user authentication."
+          technologies={['C#', '.NET 8', 'Microservices', 'Docker', 'Redis', 'RabbitMQ', 'PostgreSQL']}
+        />
+        
+        <ProjectCard
+          title="API Gateway & Authentication Service"
+          description="A secure API gateway with JWT authentication and authorization service built with ASP.NET Core. Features role-based access control, rate limiting, and request/response logging."
+          technologies={['ASP.NET Core', 'JWT', 'OAuth 2.0', 'Redis', 'Docker', 'Swagger']}
+        />
+      </div>
+      
+      <div class="github-cta text-center mt-3">
+        <h3>Want to see more?</h3>
+        <p>Check out my GitHub profile for additional projects and contributions</p>
+        <a href="https://github.com/MazMorrDev" target="_blank" rel="noopener noreferrer" class="btn mt-1">
+          Visit My GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-3" style="background-color: var(--secondary-black);">
+    <div class="container">
+      <h2 class="text-center mb-3">Project Highlights</h2>
+      
+      <div class="highlights-grid">
+        <div class="highlight-card">
+          <div class="highlight-icon">🚀</div>
+          <h3>Full-Stack Expertise</h3>
+          <p>Demonstrated ability to build complete applications from database design to frontend implementation</p>
+        </div>
+        
+        <div class="highlight-card">
+          <div class="highlight-icon">⚙️</div>
+          <h3>Clean Architecture</h3>
+          <p>Focus on modular design, separation of concerns, and maintainable code structure</p>
+        </div>
+        
+        <div class="highlight-card">
+          <div class="highlight-icon">🔧</div>
+          <h3>Testing & Quality</h3>
+          <p>Implementation of comprehensive testing strategies for robust and reliable applications</p>
+        </div>
+        
+        <div class="highlight-card">
+          <div class="highlight-icon">📊</div>
+          <h3>Business Focus</h3>
+          <p>Projects designed with real-world business needs and practical applications in mind</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .projects-hero {
+    min-height: 100vh;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: #ddd;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .github-cta {
+    padding: 3rem;
+    background-color: var(--secondary-black);
+    border-radius: 8px;
+    border: 1px solid var(--medium-gray);
+  }
+  
+  .github-cta h3 {
+    color: var(--primary-white);
+    margin-bottom: 0.5rem;
+  }
+  
+  .github-cta p {
+    color: #ddd;
+  }
+  
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .highlight-card {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--primary-black);
+    border-radius: 8px;
+    border: 1px solid var(--medium-gray);
+    transition: var(--transition);
+  }
+  
+  .highlight-card:hover {
+    border-color: var(--primary-red);
+    transform: translateY(-5px);
+  }
+  
+  .highlight-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .highlight-card h3 {
+    color: var(--primary-white);
+    margin-bottom: 1rem;
+  }
+  
+  .highlight-card p {
+    color: #ddd;
+  }
+</style>
