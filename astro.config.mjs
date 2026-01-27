@@ -1,9 +1,11 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
 export default defineConfig({
-  site: 'https://mazmorrdev.github.io/portfolio.github.io/',
+  // ⚠️ SOLO el dominio base, SIN la subruta
+  site: 'https://mazmorrdev.github.io',
+  
+  // ⚠️ SOLO la subruta, sin el dominio
   base: '/portfolio.github.io/',
+  
   integrations: []
 });
