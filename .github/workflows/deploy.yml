@@ -17,29 +17,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Setup Node
+      # 1. Configura Node.js y pnpm en un solo paso
+      - name: Setup Node.js and pnpm
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: 'pnpm'  # Esto habilita caché automáticamente
       
+      # 2. Instala pnpm si no está incluido (forma explícita)
+      - name: Install pnpm
+        run: npm install -g pnpm
+      
+      # 3. Instala dependencias CON PNPM
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       
+      # 4. Construye con Astro
       - name: Build with Astro
-        run: npm run build
+        run: pnpm run build
       
+      # 5. Sube el artefacto
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
