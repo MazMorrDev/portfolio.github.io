@@ -2,8 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]  # Cambia a 'master' si esa es tu rama principal
-  workflow_dispatch:    # Permite ejecutar manualmente
+    branches: [ main ]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -17,27 +17,46 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      # 1. Configura Node.js y pnpm en un solo paso
-      - name: Setup Node.js and pnpm
+      # 1. Configura Node.js (sin caché aquí, lo haremos después)
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: 'pnpm'  # Esto habilita caché automáticamente
       
-      # 2. Instala pnpm si no está incluido (forma explícita)
+      # 2. Instala pnpm GLOBALMENTE (esto es lo clave que faltaba)
       - name: Install pnpm
         run: npm install -g pnpm
       
-      # 3. Instala dependencias CON PNPM
+      # 3. Configura caché para pnpm (OPCIONAL pero recomendado para velocidad)
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      
+      # 4. Instala dependencias CON PNPM
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       
-      # 4. Construye con Astro
+      # 5. Construye con Astro
       - name: Build with Astro
         run: pnpm run build
       
-      # 5. Sube el artefacto
+      # 6. Sube el artefacto
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
