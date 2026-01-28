@@ -1,6 +1,6 @@
 ---
 export interface Props {
-  category: 'backend' | 'frontend' | 'database' | 'tools';
+  category: "backend" | "frontend" | "database" | "tools";
 }
 
 const { category } = Astro.props;
@@ -20,36 +20,125 @@ interface TechnologiesByCategory {
 
 const technologies: TechnologiesByCategory = {
   backend: [
-    { name: 'C#', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
-    { name: '.NET', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg' },
-    { name: 'ASP.NET Core', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg' },
-    { name: 'Java', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-    { name: 'Spring Boot', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
-    { name: 'Entity Framework', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/entityframework.svg' },
+    {
+      name: "C#",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+    },
+    {
+      name: ".NET",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg",
+    },
+    {
+      name: "ASP.NET Core",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg",
+    },
+    {
+      name: "Entity Framework",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg",
+    },
+    {
+      name: "Java",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    },
+    {
+      name: "Spring Boot",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+    },
   ],
   frontend: [
-    { name: 'Angular', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg' },
-    { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-    { name: 'HTML5', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-    { name: 'CSS3', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-    { name: 'JavaFX', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+    {
+      name: "Angular",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
+    },
+    {
+      name: "Astro",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/astro/astro-original.svg",
+    },
+    {
+      name: "TypeScript",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    },
+    {
+      name: "JavaScript",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    },
+    {
+      name: "HTML5",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    },
+    {
+      name: "CSS3",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    },
+    {
+      name: "JavaFX",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    },
   ],
   database: [
-    { name: 'PostgreSQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
-    { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-    { name: 'SQL Server', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/microsoftsqlserver.svg' },
-    { name: 'SQLite', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg' },
-    { name: 'H2 Database', logo: 'https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/h2.svg' },
+    {
+      name: "PostgreSQL",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    },
+    {
+      name: "MySQL",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    },
+    {
+      name: "MariaDB",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mariadb/mariadb-original.svg",
+    },
+    {
+      name: "MongoDB",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    },
+    {
+      name: "SQL Server",
+      logo: "https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoft-sql-server&logoColor=white",
+    },
+    {
+      name: "SQLite",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg",
+    },
+    {
+      name: "H2 Database",
+      logo: "https://img.shields.io/badge/H2%20Database-4479A1?logo=database&logoColor=white",
+    },
   ],
   tools: [
-    { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-    { name: 'GitHub', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
-    { name: 'Docker', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-    { name: 'Visual Studio', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg' },
-    { name: 'VS Code', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
-    { name: 'Maven', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg' },
-    { name: 'IntelliJ IDEA', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg' },
-  ]
+    {
+      name: "Git",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    },
+    {
+      name: "GitHub",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    },
+    {
+      name: "Docker",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    },
+    {
+      name: "Visual Studio",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg",
+    },
+    {
+      name: "VS Code",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+    },
+    {
+      name: "Zed",
+      logo: "https://img.shields.io/badge/Zed-000000?logo=zed&logoColor=white",
+    },
+    {
+      name: "Maven",
+      logo: "https://img.shields.io/badge/Apache%20Maven-C71A36?logo=apachemaven&logoColor=white",
+    },
+    {
+      name: "IntelliJ IDEA",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg",
+    },
+  ],
 };
 
 const techList: Technology[] = technologies[category];
@@ -58,234 +147,233 @@ const techList: Technology[] = technologies[category];
 <div class="tech-carousel">
   <div class="carousel-container" id={`carousel-${category}`}>
     <div class="carousel-track">
-      {techList.map((tech: Technology, index: number) => (
-        <div class="carousel-slide" data-key={index}>
-          <div class="tech-card">
-            <div class="tech-logo">
-              <img 
-                src={tech.logo} 
-                alt={`${tech.name} logo`}
-                width="60"
-                height="60"
-                loading="lazy"
-              />
+      {
+        techList.map((tech: Technology, index: number) => (
+          <div class="carousel-slide" data-key={index}>
+            <div class="tech-card">
+              <div class="tech-logo">
+                <img
+                  src={tech.logo}
+                  alt={`${tech.name} logo`}
+                  width="60"
+                  height="60"
+                  loading="lazy"
+                />
+              </div>
+              <div class="tech-name">{tech.name}</div>
             </div>
-            <div class="tech-name">{tech.name}</div>
           </div>
-        </div>
-      ))}
-      
-      <!-- Duplicamos los slides para efecto infinito -->
-      {techList.map((tech: Technology, index: number) => (
-        <div class="carousel-slide" data-key={`dup-${index}`}>
-          <div class="tech-card">
-            <div class="tech-logo">
-              <img 
-                src={tech.logo} 
-                alt={`${tech.name} logo`}
-                width="60"
-                height="60"
-                loading="lazy"
-              />
-            </div>
-            <div class="tech-name">{tech.name}</div>
-          </div>
-        </div>
-      ))}
+        ))
+      }
+    </div>
+
+    <!-- Controles del carrusel -->
+    <div class="carousel-controls">
+      <button
+        class="carousel-btn prev"
+        type="button"
+        onclick={`scrollCarousel('${category}', -1)`}
+      >
+        ←
+      </button>
+      <button
+        class="carousel-btn next"
+        type="button"
+        onclick={`scrollCarousel('${category}', 1)`}
+      >
+        →
+      </button>
     </div>
   </div>
-  
-  <!-- Controles del carrusel -->
-  <div class="carousel-controls">
-    <button class="carousel-btn prev" type="button" onclick={`scrollCarousel('${category}', -1)`}>
-      ←
-    </button>
-    <button class="carousel-btn next" type="button" onclick={`scrollCarousel('${category}', 1)`}>
-      →
-    </button>
-  </div>
-</div>
 
-<script>
-  // Función para manejar el scroll del carrusel
-  function scrollCarousel(category: string, direction: number) {
-    const carousel = document.getElementById(`carousel-${category}`);
-    const scrollAmount = 200; // Cantidad de scroll en píxeles
-    
-    if (carousel) {
-      carousel.scrollBy({
-        left: direction * scrollAmount,
-        behavior: 'smooth'
-      });
+  <script>
+    // Función para manejar el scroll del carrusel
+    function scrollCarousel(category: string, direction: number) {
+      const carousel = document.getElementById(`carousel-${category}`);
+      const scrollAmount = 200; // Cantidad de scroll en píxeles
+
+      if (carousel) {
+        carousel.scrollBy({
+          left: direction * scrollAmount,
+          behavior: "smooth",
+        });
+      }
     }
-  }
-  
-  // Efecto de desplazamiento automático infinito
-  document.addEventListener('DOMContentLoaded', () => {
-    const carousels = document.querySelectorAll('.carousel-container');
-    
-    carousels.forEach((carousel: Element) => {
-      // Clonamos el contenido para efecto infinito
-      const track = carousel.querySelector('.carousel-track');
-      const htmlCarousel = carousel as HTMLElement;
-      
-      // Auto-scroll cada 3 segundos
-      let autoScroll = setInterval(() => {
-        if (htmlCarousel && 'scrollBy' in htmlCarousel) {
-          htmlCarousel.scrollBy({ left: 200, behavior: 'smooth' });
-          
-          // Reset al llegar al final
-          if (track && htmlCarousel.scrollLeft >= (track as HTMLElement).scrollWidth / 2) {
-            htmlCarousel.scrollLeft = 0;
-          }
-        }
-      }, 3000);
-      
-      // Pausar auto-scroll al hacer hover
-      carousel.addEventListener('mouseenter', () => {
-        clearInterval(autoScroll);
-      });
-      
-      carousel.addEventListener('mouseleave', () => {
-        autoScroll = setInterval(() => {
-          if (htmlCarousel && 'scrollBy' in htmlCarousel) {
-            htmlCarousel.scrollBy({ left: 200, behavior: 'smooth' });
-            
-            if (track && htmlCarousel.scrollLeft >= (track as HTMLElement).scrollWidth / 2) {
+
+    // Efecto de desplazamiento automático infinito
+    document.addEventListener("DOMContentLoaded", () => {
+      const carousels = document.querySelectorAll(".carousel-container");
+
+      carousels.forEach((carousel: Element) => {
+        // Clonamos el contenido para efecto infinito
+        const track = carousel.querySelector(".carousel-track");
+        const htmlCarousel = carousel as HTMLElement;
+
+        // Auto-scroll cada 3 segundos
+        let autoScroll = setInterval(() => {
+          if (htmlCarousel && "scrollBy" in htmlCarousel) {
+            htmlCarousel.scrollBy({ left: 200, behavior: "smooth" });
+
+            // Reset al llegar al final
+            if (
+              track &&
+              htmlCarousel.scrollLeft >= (track as HTMLElement).scrollWidth / 2
+            ) {
               htmlCarousel.scrollLeft = 0;
             }
           }
         }, 3000);
+
+        // Pausar auto-scroll al hacer hover
+        carousel.addEventListener("mouseenter", () => {
+          clearInterval(autoScroll);
+        });
+
+        carousel.addEventListener("mouseleave", () => {
+          autoScroll = setInterval(() => {
+            if (htmlCarousel && "scrollBy" in htmlCarousel) {
+              htmlCarousel.scrollBy({ left: 200, behavior: "smooth" });
+
+              if (
+                track &&
+                htmlCarousel.scrollLeft >=
+                  (track as HTMLElement).scrollWidth / 2
+              ) {
+                htmlCarousel.scrollLeft = 0;
+              }
+            }
+          }, 3000);
+        });
       });
     });
-  });
-</script>
+  </script>
 
-<style>
-  .tech-carousel {
-    position: relative;
-    margin: 2rem 0;
-  }
-  
-  .carousel-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
-    gap: 1rem;
-    padding: 1rem 0;
-  }
-  
-  .carousel-container::-webkit-scrollbar {
-    display: none; /* Chrome/Safari/Opera */
-  }
-  
-  .carousel-track {
-    display: flex;
-    gap: 1.5rem;
-    min-width: 100%;
-  }
-  
-  .carousel-slide {
-    flex: 0 0 auto;
-  }
-  
-  .tech-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 120px;
-    height: 140px;
-    background-color: var(--secondary-black);
-    border-radius: 12px;
-    border: 1px solid var(--medium-gray);
-    padding: 1rem;
-    transition: all 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .tech-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-red);
-    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.1);
-  }
-  
-  .tech-logo {
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.8rem;
-  }
-  
-  .tech-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: grayscale(20%);
-    transition: filter 0.3s ease;
-  }
-  
-  .tech-card:hover .tech-logo img {
-    filter: grayscale(0%) brightness(1.2);
-  }
-  
-  .tech-name {
-    color: var(--primary-white);
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-align: center;
-    margin-top: 0.5rem;
-  }
-  
-  .carousel-controls {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  
-  .carousel-btn {
-    background-color: var(--secondary-black);
-    border: 1px solid var(--medium-gray);
-    color: var(--primary-white);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 1.2rem;
-  }
-  
-  .carousel-btn:hover {
-    background-color: var(--primary-red);
-    border-color: var(--primary-red);
-  }
-  
-  .carousel-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-  
-  @media (max-width: 768px) {
+  <style>
+    .tech-carousel {
+      position: relative;
+      margin: 2rem 0;
+    }
+
+    .carousel-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE/Edge */
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .carousel-container::-webkit-scrollbar {
+      display: none; /* Chrome/Safari/Opera */
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 1.5rem;
+      min-width: 100%;
+    }
+
+    .carousel-slide {
+      flex: 0 0 auto;
+    }
+
     .tech-card {
-      width: 100px;
-      height: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 120px;
+      height: 140px;
+      background-color: var(--secondary-black);
+      border-radius: 12px;
+      border: 1px solid var(--medium-gray);
+      padding: 1rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
-    
+
+    .tech-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-red);
+      box-shadow: 0 10px 20px rgba(255, 0, 0, 0.1);
+    }
+
     .tech-logo {
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.8rem;
     }
-    
+
+    .tech-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: grayscale(20%);
+      transition: filter 0.3s ease;
+    }
+
+    .tech-card:hover .tech-logo img {
+      filter: grayscale(0%) brightness(1.2);
+    }
+
     .tech-name {
-      font-size: 0.8rem;
+      color: var(--primary-white);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-align: center;
+      margin-top: 0.5rem;
     }
-  }
-</style>
+
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .carousel-btn {
+      background-color: var(--secondary-black);
+      border: 1px solid var(--medium-gray);
+      color: var(--primary-white);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1.2rem;
+    }
+
+    .carousel-btn:hover {
+      background-color: var(--primary-red);
+      border-color: var(--primary-red);
+    }
+
+    .carousel-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 768px) {
+      .tech-card {
+        width: 100px;
+        height: 120px;
+      }
+
+      .tech-logo {
+        width: 50px;
+        height: 50px;
+      }
+
+      .tech-name {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</div>

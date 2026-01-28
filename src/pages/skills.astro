@@ -1,6 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import TechCarousel from '../components/TechCarousel.astro';
+import Layout from "../layouts/Layout.astro";
+import TechCarousel from "../components/TechCarousel.astro";
 ---
 
 <Layout>
@@ -8,36 +8,51 @@ import TechCarousel from '../components/TechCarousel.astro';
     <div class="container">
       <div class="text-center mb-4">
         <h1>Technical Expertise</h1>
-        <p class="subtitle">My comprehensive skill set across backend development, databases, and modern technologies</p>
+        <p class="subtitle">
+          My comprehensive skill set across backend development, databases, and
+          modern technologies
+        </p>
       </div>
-      
+
       <!-- Carrusel Principal de Tecnologías -->
       <div class="main-carousel-section fade-in">
         <h2 class="text-center mb-3">My Technology Stack</h2>
-        <p class="text-center mb-4" style="color: #ddd; max-width: 600px; margin: 0 auto;">
-          Explore the technologies I work with. Click on any logo to learn more about my experience.
+        <p
+          class="text-center mb-4"
+          style="color: #ddd; max-width: 600px; margin: 0 auto;"
+        >
+          Explore the technologies I work with. Click on any logo to learn more
+          about my experience.
         </p>
-        
+
         <div class="carousel-categories">
           <div class="category-tabs">
-            <button class="category-tab active" onclick="showCategory('backend')">Backend</button>
-            <button class="category-tab" onclick="showCategory('frontend')">Frontend</button>
-            <button class="category-tab" onclick="showCategory('database')">Databases</button>
-            <button class="category-tab" onclick="showCategory('tools')">Tools & DevOps</button>
+            <button class="category-tab active" data-category="backend"
+              >Backend</button
+            >
+            <button class="category-tab" data-category="frontend"
+              >Frontend</button
+            >
+            <button class="category-tab" data-category="database"
+              >Databases</button
+            >
+            <button class="category-tab" data-category="tools"
+              >Tools & DevOps</button
+            >
           </div>
-          
+
           <div class="category-content active" id="backend-carousel">
             <TechCarousel category="backend" />
           </div>
-          
+
           <div class="category-content" id="frontend-carousel">
             <TechCarousel category="frontend" />
           </div>
-          
+
           <div class="category-content" id="database-carousel">
             <TechCarousel category="database" />
           </div>
-          
+
           <div class="category-content" id="tools-carousel">
             <TechCarousel category="tools" />
           </div>
@@ -45,12 +60,12 @@ import TechCarousel from '../components/TechCarousel.astro';
       </div>
     </div>
   </section>
-  
+
   <!-- Nivel de Maestría -->
   <section class="py-3" style="background-color: var(--secondary-black);">
     <div class="container">
       <h2 class="text-center mb-4">Skill Proficiency Levels</h2>
-      
+
       <div class="proficiency-grid">
         <div class="proficiency-category">
           <div class="proficiency-header expert">
@@ -60,31 +75,43 @@ import TechCarousel from '../components/TechCarousel.astro';
           <div class="skills-visual">
             <div class="skill-visual-item">
               <div class="skill-visual-logo">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+                  alt="C#"
+                />
               </div>
               <span class="skill-visual-name">C#</span>
             </div>
             <div class="skill-visual-item">
               <div class="skill-visual-logo">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt=".NET" />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg"
+                  alt=".NET"
+                />
               </div>
               <span class="skill-visual-name">.NET</span>
             </div>
             <div class="skill-visual-item">
               <div class="skill-visual-logo">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt="ASP.NET" />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg"
+                  alt="ASP.NET"
+                />
               </div>
               <span class="skill-visual-name">ASP.NET Core</span>
             </div>
             <div class="skill-visual-item">
               <div class="skill-visual-logo">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/entityframework.svg" alt="EF" />
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/entityframework.svg"
+                  alt="EF"
+                />
               </div>
               <span class="skill-visual-name">Entity Framework</span>
             </div>
           </div>
         </div>
-        
+
         <div class="proficiency-category">
           <div class="proficiency-header advanced">
             <h3>🟡 Advanced Level</h3>
@@ -93,31 +120,43 @@ import TechCarousel from '../components/TechCarousel.astro';
           <div class="skills-visual">
             <div class="skill-visual-item">
               <div class="skill-visual-logo">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                  alt="Java"
+                />
               </div>
               <span class="skill-visual-name">Java</span>
             </div>
             <div class="skill-visual-item">
               <div class="skill-visual-logo">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring" />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                  alt="Spring"
+                />
               </div>
               <span class="skill-visual-name">Spring Boot</span>
             </div>
             <div class="skill-visual-item">
               <div class="skill-visual-logo">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                  alt="PostgreSQL"
+                />
               </div>
               <span class="skill-visual-name">PostgreSQL</span>
             </div>
             <div class="skill-visual-item">
               <div class="skill-visual-logo">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+                  alt="Angular"
+                />
               </div>
               <span class="skill-visual-name">Angular</span>
             </div>
           </div>
         </div>
-        
+
         <div class="proficiency-category">
           <div class="proficiency-header intermediate">
             <h3>🔵 Intermediate Level</h3>
@@ -126,25 +165,37 @@ import TechCarousel from '../components/TechCarousel.astro';
           <div class="skills-visual">
             <div class="skill-visual-item">
               <div class="skill-visual-logo">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                  alt="MySQL"
+                />
               </div>
               <span class="skill-visual-name">MySQL</span>
             </div>
             <div class="skill-visual-item">
               <div class="skill-visual-logo">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/microsoftsqlserver.svg" alt="SQL Server" />
+                <img
+                  src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/microsoftsqlserver.svg"
+                  alt="SQL Server"
+                />
               </div>
               <span class="skill-visual-name">SQL Server</span>
             </div>
             <div class="skill-visual-item">
               <div class="skill-visual-logo">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                  alt="Docker"
+                />
               </div>
               <span class="skill-visual-name">Docker</span>
             </div>
             <div class="skill-visual-item">
               <div class="skill-visual-logo">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Maven" />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"
+                  alt="Maven"
+                />
               </div>
               <span class="skill-visual-name">Maven</span>
             </div>
@@ -153,80 +204,108 @@ import TechCarousel from '../components/TechCarousel.astro';
       </div>
     </div>
   </section>
-  
+
   <!-- Timeline de Aprendizaje -->
   <section class="py-3">
     <div class="container">
       <h2 class="text-center mb-4">Learning Journey</h2>
-      
+
       <div class="learning-timeline">
         <div class="timeline-item">
           <div class="timeline-dot dot-current"></div>
           <div class="timeline-content">
             <h3>2024 - Present</h3>
             <h4>Advanced .NET & Microservices</h4>
-            <p>Deepening expertise in .NET ecosystem, cloud technologies, and microservices architecture. Exploring Docker, Redis, and advanced design patterns.</p>
+            <p>
+              Deepening expertise in .NET ecosystem, cloud technologies, and
+              microservices architecture. Exploring Docker, Redis, and advanced
+              design patterns.
+            </p>
           </div>
         </div>
-        
+
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <h3>2023 - 2024</h3>
             <h4>Full-Stack Development</h4>
-            <p>Mastering full-stack applications with .NET backend and Angular frontend. Building complete business solutions with PostgreSQL databases.</p>
+            <p>
+              Mastering full-stack applications with .NET backend and Angular
+              frontend. Building complete business solutions with PostgreSQL
+              databases.
+            </p>
           </div>
         </div>
-        
+
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <h3>2022 - 2023</h3>
             <h4>Backend Fundamentals</h4>
-            <p>Learning core backend concepts with C#, Java, Spring Boot, and database management. Building REST APIs and server-side applications.</p>
+            <p>
+              Learning core backend concepts with C#, Java, Spring Boot, and
+              database management. Building REST APIs and server-side
+              applications.
+            </p>
           </div>
         </div>
-        
+
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <h3>2021 - 2022</h3>
             <h4>Programming Foundations</h4>
-            <p>Starting Computer Engineering degree. Learning programming fundamentals, data structures, algorithms, and software engineering principles.</p>
+            <p>
+              Starting Computer Engineering degree. Learning programming
+              fundamentals, data structures, algorithms, and software
+              engineering principles.
+            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  
+
   <!-- Filosofía de Desarrollo -->
   <section class="py-3" style="background-color: var(--secondary-black);">
     <div class="container">
       <h2 class="text-center mb-4">Development Philosophy</h2>
-      
+
       <div class="philosophy-grid">
         <div class="philosophy-item">
           <div class="philosophy-number">01</div>
           <h3>Clean Code First</h3>
-          <p>Writing maintainable, readable, and well-structured code following SOLID principles and best practices.</p>
+          <p>
+            Writing maintainable, readable, and well-structured code following
+            SOLID principles and best practices.
+          </p>
         </div>
-        
+
         <div class="philosophy-item">
           <div class="philosophy-number">02</div>
           <h3>Test-Driven Development</h3>
-          <p>Implementing comprehensive testing strategies to ensure software quality and reliability from the start.</p>
+          <p>
+            Implementing comprehensive testing strategies to ensure software
+            quality and reliability from the start.
+          </p>
         </div>
-        
+
         <div class="philosophy-item">
           <div class="philosophy-number">03</div>
           <h3>Continuous Learning</h3>
-          <p>Staying updated with latest technologies and methodologies to deliver modern, efficient solutions.</p>
+          <p>
+            Staying updated with latest technologies and methodologies to
+            deliver modern, efficient solutions.
+          </p>
         </div>
-        
+
         <div class="philosophy-item">
           <div class="philosophy-number">04</div>
           <h3>Problem Solving</h3>
-          <p>Focusing on understanding requirements deeply and architecting optimal solutions for real-world challenges.</p>
+          <p>
+            Focusing on understanding requirements deeply and architecting
+            optimal solutions for real-world challenges.
+          </p>
         </div>
       </div>
     </div>
@@ -235,29 +314,45 @@ import TechCarousel from '../components/TechCarousel.astro';
 
 <script>
   // Funciones para manejar las pestañas del carrusel
-  function showCategory(category: string): void {
-    // Ocultar todos los contenidos
-    document.querySelectorAll('.category-content').forEach((content: Element) => {
-      content.classList.remove('active');
-    });
-    
-    // Remover clase active de todas las pestañas
-    document.querySelectorAll('.category-tab').forEach((tab: Element) => {
-      tab.classList.remove('active');
-    });
-    
-    // Mostrar contenido seleccionado
-    const targetContent = document.getElementById(`${category}-carousel`);
-    if (targetContent) {
-      targetContent.classList.add('active');
+  document.addEventListener("DOMContentLoaded", () => {
+    // Función para mostrar una categoría específica
+    function showCategory(category: string | null) {
+      // Ocultar todos los contenidos
+      document.querySelectorAll(".category-content").forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      // Remover clase active de todas las pestañas
+      document.querySelectorAll(".category-tab").forEach((tab) => {
+        tab.classList.remove("active");
+      });
+
+      // Mostrar contenido seleccionado
+      const targetContent = document.getElementById(`${category}-carousel`);
+      if (targetContent) {
+        targetContent.classList.add("active");
+      }
+
+      // Activar pestaña seleccionada
+      const targetTab = document.querySelector(
+        `.category-tab[data-category="${category}"]`,
+      );
+      if (targetTab) {
+        targetTab.classList.add("active");
+      }
     }
-    
-    // Activar pestaña seleccionada
-    const targetTab = document.querySelector(`.category-tab[onclick="showCategory('${category}')"]`);
-    if (targetTab) {
-      targetTab.classList.add('active');
-    }
-  }
+
+    // Agregar event listeners a todos los botones de categoría
+    document.querySelectorAll(".category-tab").forEach((button) => {
+      button.addEventListener("click", () => {
+        const category = button.getAttribute("data-category");
+        showCategory(category);
+      });
+    });
+
+    // Establecer la primera categoría como activa por defecto
+    showCategory("backend");
+  });
 </script>
 
 <style>
@@ -265,26 +360,26 @@ import TechCarousel from '../components/TechCarousel.astro';
     min-height: 100vh;
     padding-top: 3rem;
   }
-  
+
   .subtitle {
     font-size: 1.2rem;
     color: #ddd;
     max-width: 600px;
     margin: 0 auto 3rem;
   }
-  
+
   /* Carrusel Principal */
   .main-carousel-section {
     margin-bottom: 4rem;
   }
-  
+
   .carousel-categories {
     background-color: var(--secondary-black);
     border-radius: 16px;
     padding: 2rem;
     border: 1px solid var(--medium-gray);
   }
-  
+
   .category-tabs {
     display: flex;
     justify-content: center;
@@ -292,7 +387,7 @@ import TechCarousel from '../components/TechCarousel.astro';
     gap: 0.5rem;
     margin-bottom: 2rem;
   }
-  
+
   .category-tab {
     padding: 0.8rem 1.5rem;
     background-color: var(--primary-black);
@@ -302,84 +397,87 @@ import TechCarousel from '../components/TechCarousel.astro';
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 500;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
   }
-  
+
   .category-tab:hover {
     background-color: var(--medium-gray);
   }
-  
+
   .category-tab.active {
     background-color: var(--primary-red);
     border-color: var(--primary-red);
     color: var(--primary-white);
   }
-  
+
   .category-content {
     display: none;
   }
-  
+
   .category-content.active {
     display: block;
   }
-  
+
   /* Niveles de Maestría Visual */
   .proficiency-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
   }
-  
+
   .proficiency-category {
     background-color: var(--primary-black);
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--medium-gray);
   }
-  
+
   .proficiency-header {
     padding: 1.5rem;
     text-align: center;
   }
-  
+
   .proficiency-header.expert {
     background-color: rgba(76, 175, 80, 0.1);
-    border-bottom: 3px solid #4CAF50;
+    border-bottom: 3px solid #4caf50;
   }
-  
+
   .proficiency-header.advanced {
     background-color: rgba(255, 193, 7, 0.1);
-    border-bottom: 3px solid #FFC107;
+    border-bottom: 3px solid #ffc107;
   }
-  
+
   .proficiency-header.intermediate {
     background-color: rgba(33, 150, 243, 0.1);
-    border-bottom: 3px solid #2196F3;
+    border-bottom: 3px solid #2196f3;
   }
-  
+
   .proficiency-header h3 {
     color: var(--primary-white);
     margin-bottom: 0.5rem;
   }
-  
+
   .proficiency-header p {
     color: #ddd;
     font-size: 0.9rem;
   }
-  
+
   .skills-visual {
     padding: 1.5rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 1.5rem;
   }
-  
+
   .skill-visual-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.8rem;
   }
-  
+
   .skill-visual-logo {
     width: 60px;
     height: 60px;
@@ -392,33 +490,33 @@ import TechCarousel from '../components/TechCarousel.astro';
     border: 1px solid var(--medium-gray);
     transition: all 0.3s ease;
   }
-  
+
   .skill-visual-logo:hover {
     transform: scale(1.1);
     border-color: var(--primary-red);
   }
-  
+
   .skill-visual-logo img {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
-  
+
   .skill-visual-name {
     color: var(--primary-white);
     font-size: 0.9rem;
     font-weight: 500;
   }
-  
+
   /* Timeline de Aprendizaje */
   .learning-timeline {
     max-width: 800px;
     margin: 0 auto;
     position: relative;
   }
-  
+
   .learning-timeline::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 30px;
     top: 0;
@@ -426,13 +524,13 @@ import TechCarousel from '../components/TechCarousel.astro';
     width: 2px;
     background-color: var(--primary-red);
   }
-  
+
   .timeline-item {
     display: flex;
     margin-bottom: 3rem;
     position: relative;
   }
-  
+
   .timeline-dot {
     width: 20px;
     height: 20px;
@@ -444,11 +542,11 @@ import TechCarousel from '../components/TechCarousel.astro';
     position: relative;
     z-index: 1;
   }
-  
+
   .dot-current {
     background-color: var(--primary-red);
   }
-  
+
   .timeline-content {
     flex-grow: 1;
     background-color: var(--secondary-black);
@@ -456,30 +554,30 @@ import TechCarousel from '../components/TechCarousel.astro';
     border-radius: 8px;
     border: 1px solid var(--medium-gray);
   }
-  
+
   .timeline-content h3 {
     color: var(--primary-red);
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
   }
-  
+
   .timeline-content h4 {
     color: var(--primary-white);
     margin-bottom: 0.8rem;
     font-size: 1.3rem;
   }
-  
+
   .timeline-content p {
     color: #ddd;
   }
-  
+
   /* Filosofía de Desarrollo */
   .philosophy-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
   }
-  
+
   .philosophy-item {
     background-color: var(--primary-black);
     padding: 2rem;
@@ -488,9 +586,9 @@ import TechCarousel from '../components/TechCarousel.astro';
     position: relative;
     overflow: hidden;
   }
-  
+
   .philosophy-item::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -498,7 +596,7 @@ import TechCarousel from '../components/TechCarousel.astro';
     height: 100%;
     background-color: var(--primary-red);
   }
-  
+
   .philosophy-number {
     font-size: 3rem;
     font-weight: 700;
@@ -506,65 +604,65 @@ import TechCarousel from '../components/TechCarousel.astro';
     margin-bottom: 1rem;
     line-height: 1;
   }
-  
+
   .philosophy-item h3 {
     color: var(--primary-white);
     margin-bottom: 1rem;
     font-size: 1.3rem;
   }
-  
+
   .philosophy-item p {
     color: #ddd;
     font-size: 0.95rem;
   }
-  
+
   /* Responsive */
   @media (max-width: 768px) {
     .proficiency-grid {
       grid-template-columns: 1fr;
     }
-    
+
     .category-tabs {
       flex-direction: column;
     }
-    
+
     .category-tab {
       width: 100%;
       text-align: center;
     }
-    
+
     .skills-visual {
       grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .learning-timeline::before {
       left: 20px;
     }
-    
+
     .timeline-dot {
       margin-right: 1.5rem;
     }
-    
+
     .philosophy-grid {
       grid-template-columns: 1fr;
     }
   }
-  
+
   @media (max-width: 480px) {
     .timeline-item {
       flex-direction: column;
     }
-    
+
     .timeline-dot {
       margin-right: 0;
       margin-bottom: 1rem;
       align-self: flex-start;
     }
-    
+
     .learning-timeline::before {
       left: 10px;
     }
-    
+
     .skills-visual {
       grid-template-columns: 1fr;
     }
