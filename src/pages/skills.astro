@@ -1,82 +1,203 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import SkillBadge from '../components/SkillBadge.astro';
 ---
 
 <Layout>
-  <section class="projects-hero py-3">
+  <section class="skills-hero py-3">
     <div class="container">
-      <div class="text-center mb-3">
-        <h1>My Projects</h1>
-        <p class="subtitle">A showcase of my work, focusing on backend development with .NET and full-stack applications</p>
+      <div class="text-center mb-4">
+        <h1>Technical Expertise</h1>
+        <p class="subtitle">My comprehensive skill set across backend development, databases, and modern technologies</p>
       </div>
       
-      <div class="projects-grid">
-        <ProjectCard
-          title="MiniMaz ERP - Inventory & Sales System"
-          description="A comprehensive full-stack business management system built with modern .NET and Angular. Features complete CRUD operations for inventory, users, and expenses with modular architecture and comprehensive testing using xUnit for backend controllers. Recently refactored for cleaner code and better maintainability."
-          technologies={['C#', 'ASP.NET Core', 'Entity Framework', 'Angular', 'TypeScript', 'PostgreSQL', 'xUnit', 'REST API']}
-          backendRepo="https://github.com/MazMorrDev/MiniMazErpBack"
-          frontendRepo="https://github.com/MazMorrDev/MiniMazErpFront"
-        />
+      <!-- Nivel de Maestría -->
+      <div class="mastery-levels fade-in">
+        <h2 class="text-center mb-3">Skill Proficiency Levels</h2>
         
-        <ProjectCard
-          title="Business Manager Lite"
-          description="A lightweight business management application designed for small businesses and entrepreneurs. Built with Spring Boot and JavaFX, featuring client & supplier management, product inventory control, sales & invoice management, and real-time data persistence with H2 database."
-          technologies={['Java', 'Spring Boot', 'JavaFX', 'H2 Database', 'Maven', 'MVC Pattern']}
-          backendRepo="https://github.com/MazMorrDev/Business-Manager-Lite"
-        />
-        
-        <ProjectCard
-          title="Coming Soon - E-commerce Backend"
-          description="A microservices-based e-commerce backend system using .NET and various cloud technologies. Will feature product catalog, shopping cart, order processing, payment integration, and user authentication."
-          technologies={['C#', '.NET 8', 'Microservices', 'Docker', 'Redis', 'RabbitMQ', 'PostgreSQL']}
-        />
-        
-        <ProjectCard
-          title="API Gateway & Authentication Service"
-          description="A secure API gateway with JWT authentication and authorization service built with ASP.NET Core. Features role-based access control, rate limiting, and request/response logging."
-          technologies={['ASP.NET Core', 'JWT', 'OAuth 2.0', 'Redis', 'Docker', 'Swagger']}
-        />
-      </div>
-      
-      <div class="github-cta text-center mt-3">
-        <h3>Want to see more?</h3>
-        <p>Check out my GitHub profile for additional projects and contributions</p>
-        <a href="https://github.com/MazMorrDev" target="_blank" rel="noopener noreferrer" class="btn mt-1">
-          Visit My GitHub
-        </a>
+        <div class="proficiency-grid">
+          <div class="proficiency-category">
+            <div class="proficiency-header expert">
+              <h3>🟢 Expert</h3>
+              <p>Deep knowledge & professional experience</p>
+            </div>
+            <div class="skills-list">
+              <SkillBadge name="C#" category="backend" />
+              <SkillBadge name=".NET" category="backend" />
+              <SkillBadge name="ASP.NET Core" category="backend" />
+              <SkillBadge name="Entity Framework" category="backend" />
+              <SkillBadge name="REST API" category="backend" />
+            </div>
+          </div>
+          
+          <div class="proficiency-category">
+            <div class="proficiency-header advanced">
+              <h3>🟡 Advanced</h3>
+              <p>Strong experience & complex projects</p>
+            </div>
+            <div class="skills-list">
+              <SkillBadge name="Java" category="backend" />
+              <SkillBadge name="Spring Boot" category="backend" />
+              <SkillBadge name="PostgreSQL" category="database" />
+              <SkillBadge name="Angular" category="frontend" />
+              <SkillBadge name="Git" category="tools" />
+            </div>
+          </div>
+          
+          <div class="proficiency-category">
+            <div class="proficiency-header intermediate">
+              <h3>🔵 Intermediate</h3>
+              <p>Good experience & working knowledge</p>
+            </div>
+            <div class="skills-list">
+              <SkillBadge name="MySQL" category="database" />
+              <SkillBadge name="SQL Server" category="database" />
+              <SkillBadge name="TypeScript" category="frontend" />
+              <SkillBadge name="Docker" category="tools" />
+              <SkillBadge name="Maven" category="tools" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
   
+  <!-- Categorías de Habilidades -->
   <section class="py-3" style="background-color: var(--secondary-black);">
     <div class="container">
-      <h2 class="text-center mb-3">Project Highlights</h2>
+      <h2 class="text-center mb-4">Technology Categories</h2>
       
-      <div class="highlights-grid">
-        <div class="highlight-card">
-          <div class="highlight-icon">🚀</div>
-          <h3>Full-Stack Expertise</h3>
-          <p>Demonstrated ability to build complete applications from database design to frontend implementation</p>
+      <div class="categories-grid">
+        <div class="category-card">
+          <div class="category-icon">⚙️</div>
+          <h3>Backend Development</h3>
+          <p class="category-description">Building robust server-side applications and APIs</p>
+          <div class="category-skills">
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">.NET</span>
+            <span class="skill-tag">ASP.NET Core</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Spring Boot</span>
+            <span class="skill-tag">Entity Framework</span>
+          </div>
         </div>
         
-        <div class="highlight-card">
-          <div class="highlight-icon">⚙️</div>
-          <h3>Clean Architecture</h3>
-          <p>Focus on modular design, separation of concerns, and maintainable code structure</p>
+        <div class="category-card">
+          <div class="category-icon">💻</div>
+          <h3>Frontend Development</h3>
+          <p class="category-description">Creating interactive and responsive user interfaces</p>
+          <div class="category-skills">
+            <span class="skill-tag">Angular</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaFX</span>
+          </div>
         </div>
         
-        <div class="highlight-card">
-          <div class="highlight-icon">🔧</div>
-          <h3>Testing & Quality</h3>
-          <p>Implementation of comprehensive testing strategies for robust and reliable applications</p>
+        <div class="category-card">
+          <div class="category-icon">🗄️</div>
+          <h3>Databases</h3>
+          <p class="category-description">Data storage, management, and optimization</p>
+          <div class="category-skills">
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">SQL Server</span>
+            <span class="skill-tag">SQLite</span>
+            <span class="skill-tag">H2 Database</span>
+          </div>
         </div>
         
-        <div class="highlight-card">
-          <div class="highlight-icon">📊</div>
-          <h3>Business Focus</h3>
-          <p>Projects designed with real-world business needs and practical applications in mind</p>
+        <div class="category-card">
+          <div class="category-icon">🛠️</div>
+          <h3>Tools & DevOps</h3>
+          <p class="category-description">Development workflow and deployment</p>
+          <div class="category-skills">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Visual Studio</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Maven</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Timeline de Aprendizaje -->
+  <section class="py-3">
+    <div class="container">
+      <h2 class="text-center mb-4">Learning Journey</h2>
+      
+      <div class="learning-timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot dot-current"></div>
+          <div class="timeline-content">
+            <h3>2024 - Present</h3>
+            <h4>Advanced .NET & Microservices</h4>
+            <p>Deepening expertise in .NET ecosystem, cloud technologies, and microservices architecture. Exploring Docker, Redis, and advanced design patterns.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>2023 - 2024</h3>
+            <h4>Full-Stack Development</h4>
+            <p>Mastering full-stack applications with .NET backend and Angular frontend. Building complete business solutions with PostgreSQL databases.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>2022 - 2023</h3>
+            <h4>Backend Fundamentals</h4>
+            <p>Learning core backend concepts with C#, Java, Spring Boot, and database management. Building REST APIs and server-side applications.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>2021 - 2022</h3>
+            <h4>Programming Foundations</h4>
+            <p>Starting Computer Engineering degree. Learning programming fundamentals, data structures, algorithms, and software engineering principles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Certificaciones y Logros -->
+  <section class="py-3" style="background-color: var(--secondary-black);">
+    <div class="container">
+      <h2 class="text-center mb-4">Development Philosophy</h2>
+      
+      <div class="philosophy-grid">
+        <div class="philosophy-item">
+          <div class="philosophy-number">01</div>
+          <h3>Clean Code First</h3>
+          <p>Writing maintainable, readable, and well-structured code following SOLID principles and best practices.</p>
+        </div>
+        
+        <div class="philosophy-item">
+          <div class="philosophy-number">02</div>
+          <h3>Test-Driven Development</h3>
+          <p>Implementing comprehensive testing strategies to ensure software quality and reliability from the start.</p>
+        </div>
+        
+        <div class="philosophy-item">
+          <div class="philosophy-number">03</div>
+          <h3>Continuous Learning</h3>
+          <p>Staying updated with latest technologies and methodologies to deliver modern, efficient solutions.</p>
+        </div>
+        
+        <div class="philosophy-item">
+          <div class="philosophy-number">04</div>
+          <h3>Problem Solving</h3>
+          <p>Focusing on understanding requirements deeply and architecting optimal solutions for real-world challenges.</p>
         </div>
       </div>
     </div>
@@ -84,71 +205,268 @@ import ProjectCard from '../components/ProjectCard.astro';
 </Layout>
 
 <style>
-  .projects-hero {
+  .skills-hero {
     min-height: 100vh;
+    padding-top: 3rem;
   }
   
   .subtitle {
     font-size: 1.2rem;
     color: #ddd;
     max-width: 600px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 3rem;
   }
   
-  .projects-grid {
+  /* Niveles de Maestría */
+  .proficiency-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin: 2rem 0;
+    margin-bottom: 4rem;
   }
   
-  .github-cta {
-    padding: 3rem;
+  .proficiency-category {
     background-color: var(--secondary-black);
-    border-radius: 8px;
+    border-radius: 12px;
+    overflow: hidden;
     border: 1px solid var(--medium-gray);
   }
   
-  .github-cta h3 {
+  .proficiency-header {
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .proficiency-header.expert {
+    background-color: rgba(76, 175, 80, 0.1);
+    border-bottom: 3px solid #4CAF50;
+  }
+  
+  .proficiency-header.advanced {
+    background-color: rgba(255, 193, 7, 0.1);
+    border-bottom: 3px solid #FFC107;
+  }
+  
+  .proficiency-header.intermediate {
+    background-color: rgba(33, 150, 243, 0.1);
+    border-bottom: 3px solid #2196F3;
+  }
+  
+  .proficiency-header h3 {
     color: var(--primary-white);
     margin-bottom: 0.5rem;
   }
   
-  .github-cta p {
+  .proficiency-header p {
     color: #ddd;
+    font-size: 0.9rem;
   }
   
-  .highlights-grid {
+  .skills-list {
+    padding: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  
+  /* Categorías de Habilidades */
+  .categories-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
   }
   
-  .highlight-card {
-    text-align: center;
-    padding: 2rem;
+  .category-card {
     background-color: var(--primary-black);
-    border-radius: 8px;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
     border: 1px solid var(--medium-gray);
     transition: var(--transition);
   }
   
-  .highlight-card:hover {
+  .category-card:hover {
     border-color: var(--primary-red);
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.1);
   }
   
-  .highlight-icon {
+  .category-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
   }
   
-  .highlight-card h3 {
+  .category-card h3 {
     color: var(--primary-white);
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
   }
   
-  .highlight-card p {
+  .category-description {
     color: #ddd;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .category-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  
+  .skill-tag {
+    padding: 0.3rem 0.8rem;
+    background-color: var(--secondary-black);
+    color: var(--primary-red);
+    border-radius: 15px;
+    font-size: 0.85rem;
+    border: 1px solid var(--medium-gray);
+  }
+  
+  /* Timeline de Aprendizaje */
+  .learning-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .learning-timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--primary-red);
+  }
+  
+  .timeline-item {
+    display: flex;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .timeline-dot {
+    width: 20px;
+    height: 20px;
+    background-color: var(--secondary-black);
+    border: 3px solid var(--primary-red);
+    border-radius: 50%;
+    margin-right: 2rem;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .dot-current {
+    background-color: var(--primary-red);
+  }
+  
+  .timeline-content {
+    flex-grow: 1;
+    background-color: var(--secondary-black);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--medium-gray);
+  }
+  
+  .timeline-content h3 {
+    color: var(--primary-red);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .timeline-content h4 {
+    color: var(--primary-white);
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+  }
+  
+  .timeline-content p {
+    color: #ddd;
+  }
+  
+  /* Filosofía de Desarrollo */
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .philosophy-item {
+    background-color: var(--primary-black);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--medium-gray);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .philosophy-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: var(--primary-red);
+  }
+  
+  .philosophy-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(255, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    line-height: 1;
+  }
+  
+  .philosophy-item h3 {
+    color: var(--primary-white);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+  
+  .philosophy-item p {
+    color: #ddd;
+    font-size: 0.95rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .proficiency-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .categories-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .learning-timeline::before {
+      left: 20px;
+    }
+    
+    .timeline-dot {
+      margin-right: 1.5rem;
+    }
+    
+    .philosophy-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .timeline-item {
+      flex-direction: column;
+    }
+    
+    .timeline-dot {
+      margin-right: 0;
+      margin-bottom: 1rem;
+      align-self: flex-start;
+    }
+    
+    .learning-timeline::before {
+      left: 10px;
+    }
   }
 </style>
