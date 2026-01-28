@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SkillBadge from '../components/SkillBadge.astro';
+import TechCarousel from '../components/TechCarousel.astro';
 ---
 
 <Layout>
@@ -11,114 +11,143 @@ import SkillBadge from '../components/SkillBadge.astro';
         <p class="subtitle">My comprehensive skill set across backend development, databases, and modern technologies</p>
       </div>
       
-      <!-- Nivel de Maestría -->
-      <div class="mastery-levels fade-in">
-        <h2 class="text-center mb-3">Skill Proficiency Levels</h2>
+      <!-- Carrusel Principal de Tecnologías -->
+      <div class="main-carousel-section fade-in">
+        <h2 class="text-center mb-3">My Technology Stack</h2>
+        <p class="text-center mb-4" style="color: #ddd; max-width: 600px; margin: 0 auto;">
+          Explore the technologies I work with. Click on any logo to learn more about my experience.
+        </p>
         
-        <div class="proficiency-grid">
-          <div class="proficiency-category">
-            <div class="proficiency-header expert">
-              <h3>🟢 Expert</h3>
-              <p>Deep knowledge & professional experience</p>
-            </div>
-            <div class="skills-list">
-              <SkillBadge name="C#" category="backend" />
-              <SkillBadge name=".NET" category="backend" />
-              <SkillBadge name="ASP.NET Core" category="backend" />
-              <SkillBadge name="Entity Framework" category="backend" />
-              <SkillBadge name="REST API" category="backend" />
-            </div>
+        <div class="carousel-categories">
+          <div class="category-tabs">
+            <button class="category-tab active" onclick="showCategory('backend')">Backend</button>
+            <button class="category-tab" onclick="showCategory('frontend')">Frontend</button>
+            <button class="category-tab" onclick="showCategory('database')">Databases</button>
+            <button class="category-tab" onclick="showCategory('tools')">Tools & DevOps</button>
           </div>
           
-          <div class="proficiency-category">
-            <div class="proficiency-header advanced">
-              <h3>🟡 Advanced</h3>
-              <p>Strong experience & complex projects</p>
-            </div>
-            <div class="skills-list">
-              <SkillBadge name="Java" category="backend" />
-              <SkillBadge name="Spring Boot" category="backend" />
-              <SkillBadge name="PostgreSQL" category="database" />
-              <SkillBadge name="Angular" category="frontend" />
-              <SkillBadge name="Git" category="tools" />
-            </div>
+          <div class="category-content active" id="backend-carousel">
+            <TechCarousel category="backend" />
           </div>
           
-          <div class="proficiency-category">
-            <div class="proficiency-header intermediate">
-              <h3>🔵 Intermediate</h3>
-              <p>Good experience & working knowledge</p>
-            </div>
-            <div class="skills-list">
-              <SkillBadge name="MySQL" category="database" />
-              <SkillBadge name="SQL Server" category="database" />
-              <SkillBadge name="TypeScript" category="frontend" />
-              <SkillBadge name="Docker" category="tools" />
-              <SkillBadge name="Maven" category="tools" />
-            </div>
+          <div class="category-content" id="frontend-carousel">
+            <TechCarousel category="frontend" />
+          </div>
+          
+          <div class="category-content" id="database-carousel">
+            <TechCarousel category="database" />
+          </div>
+          
+          <div class="category-content" id="tools-carousel">
+            <TechCarousel category="tools" />
           </div>
         </div>
       </div>
     </div>
   </section>
   
-  <!-- Categorías de Habilidades -->
+  <!-- Nivel de Maestría -->
   <section class="py-3" style="background-color: var(--secondary-black);">
     <div class="container">
-      <h2 class="text-center mb-4">Technology Categories</h2>
+      <h2 class="text-center mb-4">Skill Proficiency Levels</h2>
       
-      <div class="categories-grid">
-        <div class="category-card">
-          <div class="category-icon">⚙️</div>
-          <h3>Backend Development</h3>
-          <p class="category-description">Building robust server-side applications and APIs</p>
-          <div class="category-skills">
-            <span class="skill-tag">C#</span>
-            <span class="skill-tag">.NET</span>
-            <span class="skill-tag">ASP.NET Core</span>
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">Spring Boot</span>
-            <span class="skill-tag">Entity Framework</span>
+      <div class="proficiency-grid">
+        <div class="proficiency-category">
+          <div class="proficiency-header expert">
+            <h3>🟢 Expert Level</h3>
+            <p>Deep knowledge & professional experience</p>
+          </div>
+          <div class="skills-visual">
+            <div class="skill-visual-item">
+              <div class="skill-visual-logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" />
+              </div>
+              <span class="skill-visual-name">C#</span>
+            </div>
+            <div class="skill-visual-item">
+              <div class="skill-visual-logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt=".NET" />
+              </div>
+              <span class="skill-visual-name">.NET</span>
+            </div>
+            <div class="skill-visual-item">
+              <div class="skill-visual-logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt="ASP.NET" />
+              </div>
+              <span class="skill-visual-name">ASP.NET Core</span>
+            </div>
+            <div class="skill-visual-item">
+              <div class="skill-visual-logo">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/entityframework.svg" alt="EF" />
+              </div>
+              <span class="skill-visual-name">Entity Framework</span>
+            </div>
           </div>
         </div>
         
-        <div class="category-card">
-          <div class="category-icon">💻</div>
-          <h3>Frontend Development</h3>
-          <p class="category-description">Creating interactive and responsive user interfaces</p>
-          <div class="category-skills">
-            <span class="skill-tag">Angular</span>
-            <span class="skill-tag">TypeScript</span>
-            <span class="skill-tag">HTML5</span>
-            <span class="skill-tag">CSS3</span>
-            <span class="skill-tag">JavaFX</span>
+        <div class="proficiency-category">
+          <div class="proficiency-header advanced">
+            <h3>🟡 Advanced Level</h3>
+            <p>Strong experience & complex projects</p>
+          </div>
+          <div class="skills-visual">
+            <div class="skill-visual-item">
+              <div class="skill-visual-logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+              </div>
+              <span class="skill-visual-name">Java</span>
+            </div>
+            <div class="skill-visual-item">
+              <div class="skill-visual-logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring" />
+              </div>
+              <span class="skill-visual-name">Spring Boot</span>
+            </div>
+            <div class="skill-visual-item">
+              <div class="skill-visual-logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
+              </div>
+              <span class="skill-visual-name">PostgreSQL</span>
+            </div>
+            <div class="skill-visual-item">
+              <div class="skill-visual-logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" />
+              </div>
+              <span class="skill-visual-name">Angular</span>
+            </div>
           </div>
         </div>
         
-        <div class="category-card">
-          <div class="category-icon">🗄️</div>
-          <h3>Databases</h3>
-          <p class="category-description">Data storage, management, and optimization</p>
-          <div class="category-skills">
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">MySQL</span>
-            <span class="skill-tag">SQL Server</span>
-            <span class="skill-tag">SQLite</span>
-            <span class="skill-tag">H2 Database</span>
+        <div class="proficiency-category">
+          <div class="proficiency-header intermediate">
+            <h3>🔵 Intermediate Level</h3>
+            <p>Good experience & working knowledge</p>
           </div>
-        </div>
-        
-        <div class="category-card">
-          <div class="category-icon">🛠️</div>
-          <h3>Tools & DevOps</h3>
-          <p class="category-description">Development workflow and deployment</p>
-          <div class="category-skills">
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">GitHub</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">Visual Studio</span>
-            <span class="skill-tag">VS Code</span>
-            <span class="skill-tag">Maven</span>
+          <div class="skills-visual">
+            <div class="skill-visual-item">
+              <div class="skill-visual-logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+              </div>
+              <span class="skill-visual-name">MySQL</span>
+            </div>
+            <div class="skill-visual-item">
+              <div class="skill-visual-logo">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/microsoftsqlserver.svg" alt="SQL Server" />
+              </div>
+              <span class="skill-visual-name">SQL Server</span>
+            </div>
+            <div class="skill-visual-item">
+              <div class="skill-visual-logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
+              </div>
+              <span class="skill-visual-name">Docker</span>
+            </div>
+            <div class="skill-visual-item">
+              <div class="skill-visual-logo">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Maven" />
+              </div>
+              <span class="skill-visual-name">Maven</span>
+            </div>
           </div>
         </div>
       </div>
@@ -170,7 +199,7 @@ import SkillBadge from '../components/SkillBadge.astro';
     </div>
   </section>
   
-  <!-- Certificaciones y Logros -->
+  <!-- Filosofía de Desarrollo -->
   <section class="py-3" style="background-color: var(--secondary-black);">
     <div class="container">
       <h2 class="text-center mb-4">Development Philosophy</h2>
@@ -204,6 +233,33 @@ import SkillBadge from '../components/SkillBadge.astro';
   </section>
 </Layout>
 
+<script>
+  // Funciones para manejar las pestañas del carrusel
+  function showCategory(category: string): void {
+    // Ocultar todos los contenidos
+    document.querySelectorAll('.category-content').forEach((content: Element) => {
+      content.classList.remove('active');
+    });
+    
+    // Remover clase active de todas las pestañas
+    document.querySelectorAll('.category-tab').forEach((tab: Element) => {
+      tab.classList.remove('active');
+    });
+    
+    // Mostrar contenido seleccionado
+    const targetContent = document.getElementById(`${category}-carousel`);
+    if (targetContent) {
+      targetContent.classList.add('active');
+    }
+    
+    // Activar pestaña seleccionada
+    const targetTab = document.querySelector(`.category-tab[onclick="showCategory('${category}')"]`);
+    if (targetTab) {
+      targetTab.classList.add('active');
+    }
+  }
+</script>
+
 <style>
   .skills-hero {
     min-height: 100vh;
@@ -217,16 +273,64 @@ import SkillBadge from '../components/SkillBadge.astro';
     margin: 0 auto 3rem;
   }
   
-  /* Niveles de Maestría */
+  /* Carrusel Principal */
+  .main-carousel-section {
+    margin-bottom: 4rem;
+  }
+  
+  .carousel-categories {
+    background-color: var(--secondary-black);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid var(--medium-gray);
+  }
+  
+  .category-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .category-tab {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-black);
+    border: 1px solid var(--medium-gray);
+    border-radius: 8px;
+    color: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .category-tab:hover {
+    background-color: var(--medium-gray);
+  }
+  
+  .category-tab.active {
+    background-color: var(--primary-red);
+    border-color: var(--primary-red);
+    color: var(--primary-white);
+  }
+  
+  .category-content {
+    display: none;
+  }
+  
+  .category-content.active {
+    display: block;
+  }
+  
+  /* Niveles de Maestría Visual */
   .proficiency-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-bottom: 4rem;
   }
   
   .proficiency-category {
-    background-color: var(--secondary-black);
+    background-color: var(--primary-black);
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--medium-gray);
@@ -262,65 +366,48 @@ import SkillBadge from '../components/SkillBadge.astro';
     font-size: 0.9rem;
   }
   
-  .skills-list {
+  .skills-visual {
     padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .skill-visual-item {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     gap: 0.8rem;
   }
   
-  /* Categorías de Habilidades */
-  .categories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-  
-  .category-card {
-    background-color: var(--primary-black);
-    border-radius: 12px;
-    padding: 2rem;
-    text-align: center;
-    border: 1px solid var(--medium-gray);
-    transition: var(--transition);
-  }
-  
-  .category-card:hover {
-    border-color: var(--primary-red);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.1);
-  }
-  
-  .category-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .category-card h3 {
-    color: var(--primary-white);
-    margin-bottom: 0.8rem;
-  }
-  
-  .category-description {
-    color: #ddd;
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-  }
-  
-  .category-skills {
+  .skill-visual-logo {
+    width: 60px;
+    height: 60px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    align-items: center;
     justify-content: center;
+    background-color: var(--secondary-black);
+    border-radius: 12px;
+    padding: 0.8rem;
+    border: 1px solid var(--medium-gray);
+    transition: all 0.3s ease;
   }
   
-  .skill-tag {
-    padding: 0.3rem 0.8rem;
-    background-color: var(--secondary-black);
-    color: var(--primary-red);
-    border-radius: 15px;
-    font-size: 0.85rem;
-    border: 1px solid var(--medium-gray);
+  .skill-visual-logo:hover {
+    transform: scale(1.1);
+    border-color: var(--primary-red);
+  }
+  
+  .skill-visual-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .skill-visual-name {
+    color: var(--primary-white);
+    font-size: 0.9rem;
+    font-weight: 500;
   }
   
   /* Timeline de Aprendizaje */
@@ -437,8 +524,17 @@ import SkillBadge from '../components/SkillBadge.astro';
       grid-template-columns: 1fr;
     }
     
-    .categories-grid {
-      grid-template-columns: 1fr;
+    .category-tabs {
+      flex-direction: column;
+    }
+    
+    .category-tab {
+      width: 100%;
+      text-align: center;
+    }
+    
+    .skills-visual {
+      grid-template-columns: repeat(2, 1fr);
     }
     
     .learning-timeline::before {
@@ -467,6 +563,10 @@ import SkillBadge from '../components/SkillBadge.astro';
     
     .learning-timeline::before {
       left: 10px;
+    }
+    
+    .skills-visual {
+      grid-template-columns: 1fr;
     }
   }
 </style>
