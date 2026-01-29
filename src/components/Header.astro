@@ -1,10 +1,10 @@
 ---
 const navItems = [
-  { name: 'Home', path: '/portfolio/' },
-  { name: 'About', path: '/portfolio/about' },
-  { name: 'Skills', path: '/portfolio/skills' },
-  { name: 'Projects', path: '/portfolio/projects' },
-  { name: 'Contact', path: '/portfolio/contact' }
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about/" },
+  { name: "Skills", path: "/skills/" },
+  { name: "Projects", path: "/projects/" },
+  { name: "Contact", path: "/contact/" },
 ];
 ---
 
@@ -12,13 +12,15 @@ const navItems = [
   <div class="container">
     <nav class="navbar">
       <div class="logo">
-        <a href="/portfolio/">MazMorrDev</a>
+        <a href="/">MazMorrDev</a>
       </div>
       <ul class="nav-links">
         {
-          navItems.map(item => (
+          navItems.map((item) => (
             <li>
-              <a href={item.path} class="nav-link">{item.name}</a>
+              <a href={item.path} class="nav-link">
+                {item.name}
+              </a>
             </li>
           ))
         }
@@ -36,42 +38,42 @@ const navItems = [
     z-index: 1000;
     border-bottom: 2px solid var(--primary-red);
   }
-  
+
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  
+
   .logo a {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--primary-white);
   }
-  
+
   .logo a:hover {
     color: var(--primary-red);
   }
-  
+
   .nav-links {
     display: flex;
     list-style: none;
     gap: 2rem;
   }
-  
+
   .nav-link {
     color: var(--primary-white);
     font-weight: 500;
     padding: 0.5rem 0;
     position: relative;
   }
-  
+
   .nav-link:hover {
     color: var(--primary-red);
   }
-  
+
   .nav-link::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -80,17 +82,26 @@ const navItems = [
     background-color: var(--primary-red);
     transition: var(--transition);
   }
-  
+
   .nav-link:hover::after {
     width: 100%;
   }
-  
+
+  .nav-link.active {
+    color: var(--primary-red);
+    font-weight: bold;
+  }
+
+  .nav-link.active::after {
+    width: 100%;
+  }
+
   @media (max-width: 768px) {
     .navbar {
       flex-direction: column;
       gap: 1rem;
     }
-    
+
     .nav-links {
       gap: 1rem;
     }
