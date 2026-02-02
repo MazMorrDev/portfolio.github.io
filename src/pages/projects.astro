@@ -99,6 +99,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 
       <div class="approach-grid">
         <div class="approach-card">
+          <div class="philosophy-number">01</div>
           <h3>Architecture First</h3>
           <p>
             Focus on clean architecture, SOLID principles, and scalable design
@@ -107,6 +108,7 @@ import ProjectCard from "../components/ProjectCard.astro";
         </div>
 
         <div class="approach-card">
+          <div class="philosophy-number">02</div>
           <h3>Test-Driven Development</h3>
           <p>
             Implement comprehensive testing strategies including unit tests,
@@ -115,6 +117,7 @@ import ProjectCard from "../components/ProjectCard.astro";
         </div>
 
         <div class="approach-card">
+          <div class="philosophy-number">03</div>
           <h3>Security Focused</h3>
           <p>
             Build secure applications with proper authentication, authorization,
@@ -123,6 +126,7 @@ import ProjectCard from "../components/ProjectCard.astro";
         </div>
 
         <div class="approach-card">
+          <div class="philosophy-number">04</div>
           <h3>Performance Optimized</h3>
           <p>
             Optimize database queries, implement caching strategies, and ensure
@@ -184,6 +188,14 @@ import ProjectCard from "../components/ProjectCard.astro";
     transition: var(--transition);
   }
 
+  .philosophy-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(255, 0, 0, 0.781);
+    margin-bottom: 1rem;
+    line-height: 1;
+  }
+  
   .approach-card:hover {
     border-color: var(--primary-red);
     transform: translateY(-5px);
