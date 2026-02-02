@@ -17,10 +17,7 @@ import TechCarousel from "../components/TechCarousel.astro";
       <!-- Carrusel Principal de Tecnologías -->
       <div class="main-carousel-section fade-in">
         <h2 class="text-center mb-3">My Technology Stack</h2>
-        <p
-          class="text-center mb-4"
-          style="color: #ddd; max-width: 600px; margin: 0 auto;"
-        >
+        <p class="text-center mb-4 carousel-subtitle">
           Explore the technologies I work with.
         </p>
 
@@ -61,7 +58,7 @@ import TechCarousel from "../components/TechCarousel.astro";
   </section>
 
   <!-- Nivel de Maestría -->
-  <section class="py-3" style="background-color: var(--secondary-black);">
+  <section class="proficiency-section py-3">
     <div class="container">
       <h2 class="text-center mb-4">Skill Proficiency Levels</h2>
 
@@ -205,7 +202,7 @@ import TechCarousel from "../components/TechCarousel.astro";
   </section>
 
   <!-- Filosofía de Desarrollo -->
-  <section class="py-3" style="background-color: var(--secondary-black);">
+  <section class="philosophy-section py-3">
     <div class="container">
       <h2 class="text-center mb-4">Development Philosophy</h2>
 
@@ -251,42 +248,50 @@ import TechCarousel from "../components/TechCarousel.astro";
 </Layout>
 
 <script>
-  // Funciones para manejar las pestañas del carrusel
   document.addEventListener("DOMContentLoaded", () => {
-    // Función para mostrar una categoría específica
-    function showCategory(category: string | null) {
+    function showCategory(category: string | null): void {
       // Ocultar todos los contenidos
-      document.querySelectorAll(".category-content").forEach((content) => {
-        content.classList.remove("active");
-      });
+      document
+        .querySelectorAll<HTMLElement>(".category-content")
+        .forEach((content: HTMLElement) => {
+          content.classList.remove("active");
+        });
 
       // Remover clase active de todas las pestañas
-      document.querySelectorAll(".category-tab").forEach((tab) => {
-        tab.classList.remove("active");
-      });
+      document
+        .querySelectorAll<HTMLButtonElement>(".category-tab")
+        .forEach((tab: HTMLButtonElement) => {
+          tab.classList.remove("active");
+        });
 
-      // Mostrar contenido seleccionado
-      const targetContent = document.getElementById(`${category}-carousel`);
-      if (targetContent) {
-        targetContent.classList.add("active");
-      }
+      // Mostrar contenido seleccionado si category no es null
+      if (category) {
+        const targetContent: HTMLElement | null = document.getElementById(
+          `${category}-carousel`,
+        );
+        if (targetContent) {
+          targetContent.classList.add("active");
+        }
 
-      // Activar pestaña seleccionada
-      const targetTab = document.querySelector(
-        `.category-tab[data-category="${category}"]`,
-      );
-      if (targetTab) {
-        targetTab.classList.add("active");
+        // Activar pestaña seleccionada
+        const targetTab: HTMLElement | null = document.querySelector(
+          `.category-tab[data-category="${category}"]`,
+        );
+        if (targetTab) {
+          targetTab.classList.add("active");
+        }
       }
     }
 
     // Agregar event listeners a todos los botones de categoría
-    document.querySelectorAll(".category-tab").forEach((button) => {
-      button.addEventListener("click", () => {
-        const category = button.getAttribute("data-category");
-        showCategory(category);
+    document
+      .querySelectorAll<HTMLButtonElement>(".category-tab")
+      .forEach((button: HTMLButtonElement) => {
+        button.addEventListener("click", () => {
+          const category: string | null = button.getAttribute("data-category");
+          showCategory(category);
+        });
       });
-    });
 
     // Establecer la primera categoría como activa por defecto
     showCategory("backend");
@@ -294,6 +299,7 @@ import TechCarousel from "../components/TechCarousel.astro";
 </script>
 
 <style>
+  /* Estilos generales */
   .skills-hero {
     min-height: 100vh;
     padding-top: 3rem;
@@ -309,6 +315,12 @@ import TechCarousel from "../components/TechCarousel.astro";
   /* Carrusel Principal */
   .main-carousel-section {
     margin-bottom: 4rem;
+  }
+
+  .carousel-subtitle {
+    color: #ddd;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   .carousel-categories {
@@ -358,7 +370,13 @@ import TechCarousel from "../components/TechCarousel.astro";
     display: block;
   }
 
-  /* Niveles de Maestría Visual */
+  /* Secciones con fondo común */
+  .proficiency-section,
+  .philosophy-section {
+    background-color: var(--secondary-black);
+  }
+
+  /* Niveles de Maestría */
   .proficiency-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -375,21 +393,7 @@ import TechCarousel from "../components/TechCarousel.astro";
   .proficiency-header {
     padding: 1.5rem;
     text-align: center;
-  }
-
-  .proficiency-header.expert {
-    background-color: rgba(76, 175, 80, 0.1);
-    border-bottom: 3px solid #4caf50;
-  }
-
-  .proficiency-header.advanced {
-    background-color: rgba(255, 193, 7, 0.1);
-    border-bottom: 3px solid #ffc107;
-  }
-
-  .proficiency-header.intermediate {
-    background-color: rgba(33, 150, 243, 0.1);
-    border-bottom: 3px solid #2196f3;
+    border-bottom: 3px solid;
   }
 
   .proficiency-header h3 {
@@ -400,6 +404,21 @@ import TechCarousel from "../components/TechCarousel.astro";
   .proficiency-header p {
     color: #ddd;
     font-size: 0.9rem;
+  }
+
+  .proficiency-header.expert {
+    background-color: rgba(76, 175, 80, 0.1);
+    border-bottom-color: #4caf50;
+  }
+
+  .proficiency-header.advanced {
+    background-color: rgba(255, 193, 7, 0.1);
+    border-bottom-color: #ffc107;
+  }
+
+  .proficiency-header.intermediate {
+    background-color: rgba(33, 150, 243, 0.1);
+    border-bottom-color: #2196f3;
   }
 
   .skills-visual {
@@ -444,69 +463,6 @@ import TechCarousel from "../components/TechCarousel.astro";
     color: var(--primary-white);
     font-size: 0.9rem;
     font-weight: 500;
-  }
-
-  /* Timeline de Aprendizaje */
-  .learning-timeline {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-  }
-
-  .learning-timeline::before {
-    content: "";
-    position: absolute;
-    left: 30px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: var(--primary-red);
-  }
-
-  .timeline-item {
-    display: flex;
-    margin-bottom: 3rem;
-    position: relative;
-  }
-
-  .timeline-dot {
-    width: 20px;
-    height: 20px;
-    background-color: var(--secondary-black);
-    border: 3px solid var(--primary-red);
-    border-radius: 50%;
-    margin-right: 2rem;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 1;
-  }
-
-  .dot-current {
-    background-color: var(--primary-red);
-  }
-
-  .timeline-content {
-    flex-grow: 1;
-    background-color: var(--secondary-black);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid var(--medium-gray);
-  }
-
-  .timeline-content h3 {
-    color: var(--primary-red);
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-  }
-
-  .timeline-content h4 {
-    color: var(--primary-white);
-    margin-bottom: 0.8rem;
-    font-size: 1.3rem;
-  }
-
-  .timeline-content p {
-    color: #ddd;
   }
 
   /* Filosofía de Desarrollo */
@@ -573,34 +529,12 @@ import TechCarousel from "../components/TechCarousel.astro";
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .learning-timeline::before {
-      left: 20px;
-    }
-
-    .timeline-dot {
-      margin-right: 1.5rem;
-    }
-
     .philosophy-grid {
       grid-template-columns: 1fr;
     }
   }
 
   @media (max-width: 480px) {
-    .timeline-item {
-      flex-direction: column;
-    }
-
-    .timeline-dot {
-      margin-right: 0;
-      margin-bottom: 1rem;
-      align-self: flex-start;
-    }
-
-    .learning-timeline::before {
-      left: 10px;
-    }
-
     .skills-visual {
       grid-template-columns: 1fr;
     }
