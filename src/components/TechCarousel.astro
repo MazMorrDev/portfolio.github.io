@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 export interface Props {
   category: "backend" | "frontend" | "database" | "tools";
 }
@@ -160,12 +162,14 @@ const techList: Technology[] = technologies[category];
           <div class="carousel-slide" data-key={index}>
             <div class="tech-card">
               <div class="tech-logo">
-                <img
+                <Image
                   src={tech.logo}
                   alt={`${tech.name} logo`}
-                  width="60"
-                  height="60"
+                  width={60}
+                  height={60}
                   loading="lazy"
+                  format="webp"
+                  quality="low"
                 />
               </div>
               <div class="tech-name">{tech.name}</div>
@@ -329,7 +333,7 @@ const techList: Technology[] = technologies[category];
     border-color: var(--primary-red);
     transform: scale(1.1);
   }
-  
+
   /* Posicionamiento relativo para los botones */
   .tech-carousel {
     position: relative;

@@ -1,6 +1,6 @@
 ---
-import profilePic from "../assets/profile.jpeg";
-const profileUrl = profilePic.src;
+import { Image } from "astro:assets";
+import profileImage from "../assets/profile.jpeg";
 ---
 
 <section class="welcome">
@@ -9,12 +9,15 @@ const profileUrl = profilePic.src;
       <div class="profile-section">
         <div class="profile-image-container">
           <div class="profile-image-placeholder">
-            <img
-              src={profileUrl}
+            <Image
+              src={profileImage}
               alt="Marco Antonio Romero Albanez - Backend Developer"
               class="profile-image"
-              width="250"
-              height="250"
+              width={250}
+              height={250}
+              loading="eager"
+              format="webp"
+              quality="mid"
             />
           </div>
         </div>
