@@ -3,35 +3,85 @@ export interface Props {
   title: string;
   description: string;
   technologies: string[];
+  fullStackRepo?: string;
   backendRepo?: string;
   frontendRepo?: string;
   liveDemo?: string;
 }
 
-const { title, description, technologies, backendRepo, frontendRepo, liveDemo } = Astro.props;
+const {
+  title,
+  description,
+  technologies,
+  backendRepo,
+  frontendRepo,
+  fullStackRepo,
+  liveDemo,
+} = Astro.props;
 ---
 
 <article class="project-card fade-in">
   <div class="project-header">
     <h3>{title}</h3>
   </div>
-  
+
   <div class="project-body">
     <p>{description}</p>
-    
+
     <div class="technologies">
-      {
-        technologies.map(tech => (
-          <span class="tech-badge">{tech}</span>
-        ))
-      }
+      {technologies.map((tech) => <span class="tech-badge">{tech}</span>)}
     </div>
   </div>
-  
+
   <div class="project-footer">
-    {backendRepo && <a href={backendRepo} target="_blank" rel="noopener noreferrer" class="btn btn-small">Backend Code</a>}
-    {frontendRepo && <a href={frontendRepo} target="_blank" rel="noopener noreferrer" class="btn btn-small btn-outline">Frontend Code</a>}
-    {liveDemo && <a href={liveDemo} target="_blank" rel="noopener noreferrer" class="btn btn-small">Live Demo</a>}
+    {
+      backendRepo && (
+        <a
+          href={backendRepo}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-small"
+        >
+          Backend Code
+        </a>
+      )
+    }
+    {
+      fullStackRepo && (
+        <a
+          href={fullStackRepo}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-small"
+        >
+          Backend Code
+        </a>
+      )
+    }
+    {
+      frontendRepo && (
+        <a
+          href={frontendRepo}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-small btn-outline"
+        >
+          Frontend Code
+        </a>
+      )
+    }
+    {
+      liveDemo && (
+        <a
+          href={liveDemo}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-small"
+        >
+          Live Demo
+        </a>
+      )
+    }
   </div>
 </article>
 
@@ -46,38 +96,38 @@ const { title, description, technologies, backendRepo, frontendRepo, liveDemo } 
     display: flex;
     flex-direction: column;
   }
-  
+
   .project-card:hover {
     border-color: var(--primary-red);
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(255, 0, 0, 0.1);
   }
-  
+
   .project-header {
     margin-bottom: 1.5rem;
   }
-  
+
   .project-header h3 {
     color: var(--primary-white);
     font-size: 1.5rem;
   }
-  
+
   .project-body {
     flex-grow: 1;
     margin-bottom: 1.5rem;
   }
-  
+
   .project-body p {
     color: #ddd;
     margin-bottom: 1.5rem;
   }
-  
+
   .technologies {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
   }
-  
+
   .tech-badge {
     padding: 0.3rem 0.8rem;
     background-color: var(--primary-black);
@@ -86,13 +136,13 @@ const { title, description, technologies, backendRepo, frontendRepo, liveDemo } 
     font-size: 0.8rem;
     border: 1px solid var(--medium-gray);
   }
-  
+
   .project-footer {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
   }
-  
+
   .btn-small {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
