@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -16,17 +16,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       # 1. Configura Node.js (sin caché aquí, lo haremos después)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-      
+
       # 2. Instala pnpm GLOBALMENTE (esto es lo clave que faltaba)
       - name: Install pnpm
         run: npm install -g pnpm
-      
+
       # 3. Configura caché para pnpm (OPCIONAL pero recomendado para velocidad)
       - name: Setup pnpm cache
         uses: actions/cache@v4
@@ -35,16 +35,21 @@ jobs:
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-
-      
+
       # 4. Instala dependencias CON PNPM
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      
-      # 5. Construye con Astro
+        run:
+          pnpm install --frozen-lockfile
+
+      # 5. Instalar Sharp explícitamente para el build
+      - name: Install Sharp for image optimization
+        run: pnpm add -D sharp
+
+      # 6. Construye con Astro
       - name: Build with Astro
         run: pnpm run build
-      
-      # 6. Sube el artefacto
+
+      # 7. Sube el artefacto
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
