@@ -7,30 +7,60 @@ const currentYear = new Date().getFullYear();
     <div class="footer-content">
       <div class="footer-section">
         <h3>MazMorrDev</h3>
-        <p>Backend Developer specializing in .NET and modern web technologies</p>
+        <p>
+          Backend Developer specializing in .NET and modern web technologies
+        </p>
       </div>
-      
+
       <div class="footer-section">
         <h4>Connect</h4>
         <div class="social-links">
-          <a href="https://github.com/MazMorrDev" target="_blank" rel="noopener noreferrer" class="social-link">
+          <a
+            href="https://github.com/MazMorrDev"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+          >
             GitHub
           </a>
-          <a href="https://linkedin.com/in/marco-antonio-romero-albanez-2653372b2" target="_blank" rel="noopener noreferrer" class="social-link">
+          <a
+            href="https://linkedin.com/in/marco-antonio-romero-albanez-2653372b2"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+          >
             LinkedIn
           </a>
         </div>
       </div>
-      
+
       <div class="footer-section">
         <h4>Contact</h4>
-        <p>marconchelo12@gmail.com</p>
-        <p>+53 55505961</p>
+        <div class="social-links">
+          <a
+            href="tel:+5355505961"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+          >
+            +53 55505961
+          </a>
+          <a
+            href="mailto:marconchelo12@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+          >
+            marconchelo12@gmail.com
+          </a>
+        </div>
       </div>
     </div>
-    
+
     <div class="footer-bottom">
-      <p>&copy; {currentYear} Marco Antonio Romero Albanez. All rights reserved.</p>
+      <p>
+        &copy; {currentYear} Marco Antonio Romero Albanez. All rights reserved.
+      </p>
     </div>
   </div>
 </footer>
@@ -41,46 +71,46 @@ const currentYear = new Date().getFullYear();
     padding: 3rem 0 1.5rem;
     border-top: 2px solid var(--primary-red);
   }
-  
+
   .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
   }
-  
+
   .footer-section h3 {
     color: var(--primary-red);
     margin-bottom: 1rem;
   }
-  
+
   .footer-section h4 {
     color: var(--primary-white);
     margin-bottom: 1rem;
   }
-  
+
   .social-links {
     display: flex;
     gap: 1rem;
     flex-direction: column;
   }
-  
+
   .social-link {
     color: #ddd;
     transition: var(--transition);
   }
-  
+
   .social-link:hover {
     color: var(--primary-red);
     padding-left: 0.5rem;
   }
-  
+
   .footer-bottom {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid var(--medium-gray);
   }
-  
+
   .footer-bottom p {
     color: #999;
     font-size: 0.9rem;
