@@ -1,65 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+const currentYear = new Date().getFullYear();
 ---
 
 <Layout>
   <section class="contact-hero py-3">
-    <div class="container">
-      <div class="text-center mb-3">
-        <h1>Get In Touch</h1>
-        <p class="subtitle">
-          I'm always open to discussing new opportunities, projects, or
-          collaboration
-        </p>
-      </div>
-
-      <div class="contact-content">
-        <div class="contact-info fade-in">
-          <h2>Contact Information</h2>
-
-          <div class="contact-item">
-            <h3>Email</h3>
-            <a href="mailto:marconchelo12@gmail.com" class="contact-link">
-              marconchelo12@gmail.com
-            </a>
-          </div>
-
-          <div class="contact-item">
-            <h3>Phone</h3>
-            <a href="tel:+5355505961" class="contact-link">+53 55505961</a>
-          </div>
-
-          <div class="contact-item">
-            <h3>Location</h3>
-            <p>Cárdenas, Matanzas, Cuba</p>
-          </div>
-        </div>
-
-        <div class="contact-form-container fade-in">
-          <h2>Connect With Me</h2>
-          <div class="social-links">
-            <div class="social-icons">
-              <a
-                href="https://github.com/MazMorrDev"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="social-icon"
-              >
-                GitHub
-              </a>
-              <a
-                href="https://linkedin.com/in/marco-antonio-romero-albanez-2653372b2"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="social-icon"
-              >
-                LinkedIn
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="container text-center">
       <h2 class="mb-2">Open to Opportunities</h2>
       <p class="mb-2" style="max-width: 600px; margin: 0 auto;">
@@ -71,13 +16,75 @@ import Layout from "../layouts/Layout.astro";
       <a
         href="mailto:marconchelo12@gmail.com"
         class="btn"
-        style="margin-top: 10px;">Let's Work Together</a
+        style="margin-top: 15px; margin-bottom: 50px;">Let's Work Together</a
       >
+    </div>
+    <div class="contact-content">
+      <div class="contact-info fade-in">
+        <h2>Contact Information</h2>
+
+        <div class="contact-item">
+          <h3>Email</h3>
+          <a href="mailto:marconchelo12@gmail.com" class="contact-link">
+            marconchelo12@gmail.com
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <h3>Phone</h3>
+          <a href="tel:+5355505961" class="contact-link">+53 55505961</a>
+        </div>
+
+        <div class="contact-item">
+          <h3>Location</h3>
+          <p>Cárdenas, Matanzas, Cuba</p>
+        </div>
+      </div>
+
+      <div class="contact-form-container fade-in">
+        <h2>Connect With Me</h2>
+        <div class="social-links">
+          <div class="social-icons">
+            <a
+              href="https://github.com/MazMorrDev"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+            >
+              GitHub
+            </a>
+
+            <a
+              href="https://linkedin.com/in/marco-antonio-romero-albanez-2653372b2"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </Layout>
+<div class="footer-bottom">
+  <p>
+    &copy; {currentYear} Marco Antonio Romero Albanez. All rights reserved.
+  </p>
+</div>
 
 <style>
+  .footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--medium-gray);
+  }
+
+  .footer-bottom p {
+    color: #999;
+    font-size: 0.9rem;
+  }
   .contact-hero {
     min-height: 80vh;
   }
@@ -137,9 +144,8 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .social-icons {
-    display: flex;
+    display: grid;
     gap: 1rem;
-    margin-top: 1rem;
   }
 
   .social-icon {
