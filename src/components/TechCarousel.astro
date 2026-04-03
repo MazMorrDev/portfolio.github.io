@@ -167,9 +167,9 @@ const techList: Technology[] = technologies[category];
                   alt={`${tech.name} logo`}
                   width={60}
                   height={60}
-                  loading="lazy"
+                  loading="eager"
                   format="webp"
-                  quality="low"
+                  quality="mid"
                 />
               </div>
               <div class="tech-name">{tech.name}</div>
@@ -225,7 +225,6 @@ const techList: Technology[] = technologies[category];
 
     carousels.forEach((carousel: Element): void => {
       const carouselEl = carousel as HTMLElement;
-      const category = carouselEl.id.replace("carousel-", "");
       const prevBtn = carouselEl.parentElement?.querySelector(
         ".prev-btn",
       ) as HTMLButtonElement;
@@ -395,7 +394,6 @@ const techList: Technology[] = technologies[category];
     border: 1px solid var(--medium-gray);
     padding: 1rem;
     transition: all 0.3s ease;
-    cursor: pointer;
   }
 
   .tech-card:hover {
