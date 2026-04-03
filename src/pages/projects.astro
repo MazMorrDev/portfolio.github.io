@@ -16,8 +16,11 @@ import ProjectCard from "../components/ProjectCard.astro";
 
       <div class="projects-grid">
         <ProjectCard
-          title="MiniMaz ERP - Inventory & Sales System"
-          description="A comprehensive full-stack business management system built with modern .NET and Angular. Features complete CRUD operations for inventory, users, and expenses with modular architecture. The backend implements RESTful APIs with Entity Framework, while the frontend provides a responsive Angular interface."
+          title="MazERP - Enterprise Resource Planning"
+          description="A comprehensive full-stack business management system built with modern .NET and Angular.
+           This project has a complex structure and includes the best practices of the market right now,
+           it is my main project for demonstrating abilities. Made it like if it was an real project to prove myself.
+           The Frontend code is currently in progress and soon will be available a live demo of the project"
           technologies={[
             "C#",
             "ASP.NET Core",
@@ -28,13 +31,34 @@ import ProjectCard from "../components/ProjectCard.astro";
             "REST API",
             "JWT",
           ]}
-          backendRepo="https://github.com/MazMorrDev/MiniMazErpBack"
-          frontendRepo="https://github.com/MazMorrDev/MiniMazErpFront"
+          backendRepo="https://github.com/MazMorrDev/MazERP-API.git"
         />
 
         <ProjectCard
-          title="Bussines Manager Lite"
-          description="A desktop application for comprehensive inventory management in small and medium-sized businesses. Built with Spring Boot for business logic and JavaFX for the graphical interface, it allows managing products, categories, warehouses, and transactions, with PDF/Excel export functionality and user authentication."
+          title="MiniMazERP"
+          description="A comprehensive full-stack business management system built with modern .NET and Angular.
+           Features complete CRUD operations for inventory, users, and expenses with modular architecture.
+           The backend implements RESTful APIs with Entity Framework, while the frontend provides a responsive Angular interface.
+           Made it as part of an University Project"
+          technologies={[
+            "C#",
+            "ASP.NET Core",
+            "Entity Framework",
+            "Angular",
+            "TypeScript",
+            "SQL Server",
+            "REST API",
+            "JWT",
+          ]}
+          backendRepo="https://github.com/MazMorrDev/MiniMazERP-API"
+          frontendRepo="https://github.com/MazMorrDev/MiniMazERP-Web"
+        />
+
+        <ProjectCard
+          title="Bussines Manager"
+          description="A desktop application for comprehensive inventory management in small and medium-sized businesses.
+           Built with Spring Boot for business logic and JavaFX for the graphical interface, it allows managing products, 
+           categories, warehouses, and transactions, with PDF/Excel export functionality and user authentication."
           technologies={[
             "Java",
             "Spring Boot",
@@ -45,6 +69,13 @@ import ProjectCard from "../components/ProjectCard.astro";
             "MVC Architecture",
           ]}
           fullStackRepo="https://github.com/MazMorrDev/Business-Manager-Lite"
+        />
+
+        <ProjectCard
+          title="MazTUB - Telegram User bot"
+          description="UserBot created to automatically manage my account at telegram."
+          technologies={["C#", "WTelegram"]}
+          fullStackRepo="https://github.com/MazMorrDev/MazTUB"
         />
       </div>
 
