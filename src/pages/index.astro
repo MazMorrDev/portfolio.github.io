@@ -1,66 +1,86 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Welcome from '../components/Welcome.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import Layout from "../layouts/Layout.astro";
+import Welcome from "../components/Welcome.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 ---
 
 <Layout>
   <Welcome />
-  
+
   <section class="py-3">
     <div class="container">
       <div class="text-center mb-3">
         <h2>Featured Projects</h2>
-        <p>Check out some of my recent work showcasing my backend development skills</p>
+        <p>
+          Check out some of my recent work showcasing my backend development
+          skills
+        </p>
       </div>
-      
+
       <div class="projects-grid">
         <ProjectCard
-          title="MiniMaz ERP - Inventory & Sales System"
-          description="A full-stack business management system built with modern .NET and Angular. Complete CRUD operations for inventory, users, and expenses with modular architecture."
-          technologies={['C#', 'ASP.NET Core', 'Entity Framework', 'Angular', 'TypeScript', 'PostgreSQL']}
-          backendRepo="https://github.com/MazMorrDev/MiniMazErpBack"
-          frontendRepo="https://github.com/MazMorrDev/MiniMazErpFront"
+          title="MazERP - Enterprise Resource Planning"
+          description="A comprehensive full-stack business management system built with modern .NET and Angular. This project has a complex structure and includes the best practices of the market right now, it is my main project for demonstrating abilities. Made it like if it was an real project to prove myself. The Frontend code is currently in progress and soon will be available a live demo of the project"
+          technologies={[
+            "C#",
+            "ASP.NET Core",
+            "Entity Framework",
+            "Angular",
+            "TypeScript",
+            "SQL Server",
+            "REST API",
+            "JWT",
+          ]}
+          backendRepo="https://github.com/MazMorrDev/MazERP-API"
         />
-        
+
         <ProjectCard
           title="Business Manager Lite"
           description="A lightweight business management application for small businesses and entrepreneurs, built with Spring Boot and JavaFX."
-          technologies={['Java', 'Spring Boot', 'JavaFX', 'H2 Database', 'Maven']}
+          technologies={[
+            "Java",
+            "Spring Boot",
+            "JavaFX",
+            "H2 Database",
+            "Maven",
+          ]}
           backendRepo="https://github.com/MazMorrDev/Business-Manager-Lite"
         />
       </div>
-      
+
       <div class="text-center mt-3">
         <a href="/projects/" class="btn">View All Projects</a>
       </div>
     </div>
   </section>
-  
+
   <section class="py-3" style="background-color: var(--secondary-black);">
     <div class="container">
       <div class="text-center mb-3">
         <h2>Technologies I Use</h2>
-        <p>My technical stack spans across backend, frontend, and database technologies</p>
+        <p>
+          My technical stack spans across backend, frontend, and database
+          technologies
+        </p>
       </div>
-      
+
       <div class="quick-skills">
         <div class="skill-category">
           <h3>Backend</h3>
           <p>C#, .NET, ASP.NET Core, Java, Spring Boot</p>
         </div>
-        
+
         <div class="skill-category">
           <h3>Frontend</h3>
           <p>TypeScript, Angular, HTML5, CSS3, JavaFX</p>
         </div>
-        
+
         <div class="skill-category">
           <h3>Databases</h3>
           <p>PostgreSQL, MySQL, SQLite, SQL Server</p>
         </div>
       </div>
-      
+
       <div class="text-center mt-3">
         <a href="/skills/" class="btn btn-outline">See All Skills</a>
       </div>
@@ -75,13 +95,13 @@ import ProjectCard from '../components/ProjectCard.astro';
     gap: 2rem;
     margin: 2rem 0;
   }
-  
+
   .quick-skills {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
   }
-  
+
   .skill-category {
     text-align: center;
     padding: 2rem;
@@ -89,12 +109,12 @@ import ProjectCard from '../components/ProjectCard.astro';
     border-radius: 8px;
     border: 1px solid var(--medium-gray);
   }
-  
+
   .skill-category h3 {
     color: var(--primary-red);
     margin-bottom: 1rem;
   }
-  
+
   .skill-category p {
     color: #ddd;
   }
